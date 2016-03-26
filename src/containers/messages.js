@@ -6,12 +6,10 @@ import {fetchMessages} from '../actions'
 class Messages extends Component {
   constructor(props) {
     super(props)
-    // console.log('messages props: ', props)
   }
 
   componentWillMount() {
-    this.props.fetchMessages()
-    .then((messages) => console.log(this.props.messages[0]))
+    this.props.fetchMessages(messages => console.log(messages))
   }
 
   render() {
