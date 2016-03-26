@@ -4,9 +4,10 @@ import { Link } from 'react-router'
 const Navmenu = () => {
   return (
     <ul className="navmenu">
-      <Link to='/messages'>Messages</Link>
-      <Link to='/finances'>Finance</Link>
-      <Link to='/chores'>Chores</Link>
+      <Link to='/house/messages'>Messages</Link>
+      <Link to='/house/finances'>Finance</Link>
+      <Link to='/house/chores'>Chores</Link>
+      <Link to='/dashboard'>Dashboard</Link>
     </ul>
   )
 }

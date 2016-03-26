@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class Chores extends Component {
   render() {
     return (
-      <article className="chores">
+      <article className="chores content-container">
         <p>chores component</p>
       </article>
     )
