@@ -9,9 +9,18 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
 
+
+Object.keys(window).forEach((key) => {
+  if (!(key in global)) {
+    global[key] = window[key];
+  }
+});
+
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
 const $ = _$(window);
+
+
 
 chaiJquery(chai, chai.util, $);
 
