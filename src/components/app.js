@@ -1,10 +1,14 @@
-import React from 'react';
-import { Component } from 'react';
+import React from 'react'
+import { Component } from 'react'
+import Navbar from '../containers/navbar'
 
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
-    );
+      <div>
+        <Navbar />
+        {this.props.children}
+      </div>
+    )
   }
 }

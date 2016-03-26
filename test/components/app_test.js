@@ -8,7 +8,7 @@ describe('App' , () => {
     component = renderComponent(App);
   });
 
-  it('renders something', () => {
-    expect(component).to.exist;
+  it('contains navbar', () => {
+    expect(component.find(".navbar")).to.exist;
   });
 });
