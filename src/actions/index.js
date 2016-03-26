@@ -8,7 +8,8 @@ const ROOT_URL = 'https://obie.herokuapp.com'
 export function fetchMessages () {
   const request = axios.get(`${ROOT_URL}/messages`, {
     headers: {
-      token: localStorage.getItem('obie')
+      // token: localStorage.getItem('obie')
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hbmNoZXJqZS5qdXN0aW5AZ21haWwuY29tIiwiYWNjZXNzX3Rva2VuIjoiZGVlMzI0MWEwNWMzZjk4MzU1NzcyNzM1MzI1MzA5YWNhNDY2NWI0ZjY4YTJhMGJlYmZmMWY3YmUzZTVjNGMzYiIsInVzZXJpZCI6NSwiaG91c2VJZCI6MiwiaXNMYW5kbG9yZCI6bnVsbH0.A9PYrLh1kPRapBbSAeaTZ3cyqrMwqlFP0nfPeD7yX8M'
     }
   })
   return {
