@@ -29,7 +29,7 @@ class Dashboard extends Component {
         console.log(data);
         let list = ''
         data.forEach(link => {
-          list += `<li><img src="${link}" height="50px" /></li>`
+          list += `<li><img src="${link}" height="150px" /></li>`
         })
         $('.uploaded-images').html(list)
       },
@@ -37,7 +37,6 @@ class Dashboard extends Component {
         console.log('error: ', err);
       }
     });
-    // axios.post('http://localhost:6969/upload', data).then(files => console.log(files))
   }
 
   render() {
