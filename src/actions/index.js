@@ -9,9 +9,9 @@ export function fetchMessages () {
       token: localStorage.getItem('obie')
     }
   })
+
   return {
     type: FETCH_MESSAGES,
     payload: request
   }
 }
-
