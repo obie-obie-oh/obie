@@ -4,8 +4,8 @@ import choreIcons from '../../assets/chore_icons'
 const ChoreEntry = ({
   chore
 }) => (
-  <section className="chore-entry col-sm-12 col-md-12">
-    <div className="col-xs-6 col-md-6">
+  <section className="chore-entry col-sm-12">
+    <div className="col-xs-6">
       <div>
         <div className="caption">
           <h4 className="chore-name">{chore.chorename}</h4> 
@@ -16,7 +16,7 @@ const ChoreEntry = ({
     <div className="col-xs-2">
       <img className="chore-image" src={choreIcons[chore.category]}></img>
     </div>
-    <div className="col-sm-4 col-md-4">
+    <div className="col-sm-4">
       Button Placeholder
     </div>
   </section>
