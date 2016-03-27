@@ -25,7 +25,6 @@ module.exports = function(app, express) {
         s3fsImp1.writeFile(file.name, stream).then(function() {
           fileUploadCount++;
           fileLinks.push(uri);
-          https://s3.amazonaws.com/obietestbucket123/Screen+Shot+2016-02-08+at+11.24.30+AM.png
           fs.unlink(file.path, function(err) {
             if (err) {
               console.error(err);
