@@ -42,10 +42,23 @@ class Dashboard extends Component {
   render() {
     return (
       <main className='dashboard'>
-        Dashboard
+        <h2>Dashboard</h2>
+        <h4>No Sidebar here</h4>
+        <br/>
+        <p>
+          This drop zone is for photo upload to Amazon S3.
+          It needs the server to be running to test out.
+          Run 'nodemon server/server.js' if you want to test out photo upload
+        </p>
+
         <Dropzone onDrop={this.onDrop}>
-          <div>Drop a file here or click to select files to upload</div>
+          <p>Drop a file here or click to select files to upload</p>
         </Dropzone>
+
+        <p>
+          Photos will render here once successfully uploaded to Amazon S3
+        </p>
+
         <ul className="uploaded-images">
         </ul>
       </main>
