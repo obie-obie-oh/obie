@@ -6,7 +6,6 @@ import {fetchMessages} from '../actions'
 class Messages extends Component {
   constructor(props) {
     super(props)
-    // console.log('messages props: ', props)
   }
 
   componentWillMount() {
