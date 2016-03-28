@@ -12,10 +12,8 @@ class Dashboard extends Component {
   }
 
   onDrop(files) {
-    console.log('got the files ', typeof files)
     const data = new FormData()
     _.each(files, (file, i) => {
-      console.log(file);
       data.append(`file-${i}`, file)
     })
     $.ajax({
@@ -48,7 +46,7 @@ class Dashboard extends Component {
         <p>
           This drop zone is for photo upload to Amazon S3.
           It needs the server to be running to test out.
-          Run 'nodemon server/server.js' if you want to test out photo upload
+          Run 'npm run dev' if you want to test out the server and photo upload
         </p>
 
         <Dropzone onDrop={this.onDrop}>
