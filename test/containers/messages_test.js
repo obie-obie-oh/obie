@@ -1,6 +1,7 @@
 import { renderComponent, expect } from '../test_helper'
 import Messages from '../../src/containers/messages'
 
+
 describe('Messages', () => {
   let component;
 

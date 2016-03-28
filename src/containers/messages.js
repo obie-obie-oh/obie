@@ -10,19 +10,16 @@ class Messages extends Component {
 
   componentWillMount() {
     this.props.fetchMessages()
-    .then((messages) => console.log(this.props.messages[0]))
   }
 
   render() {
     return (
-      <article className="messages">
+      <article className="messages content-container col-sm-9">
         <h2 className="text-center">Messages</h2>
         <section className="message-list">
-          {
-            this.props.messages.map((message, i) => 
-              <MessageEntry key={i} message={message} />
-            )
-          }
+          {this.props.messages.map((message, i) => 
+            <MessageEntry key={i} message={message} />
+          )}
         </section>
       </article>
     )

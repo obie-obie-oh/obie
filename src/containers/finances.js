@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class Finances extends Component {
   render() {
     return (
-      <article className="finances">
+      <article className="finances content-container">
         <p>finance component</p>
       </article>
     )

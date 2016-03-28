@@ -14,14 +14,12 @@ class Chores extends Component {
 
   render() {
     return (
-      <article className="chore-container">
+      <article className="chores col-sm-9">
         <h2 className="text-center chore-header">Chores</h2>
         <div className="chore-list">
-          {
-            this.props.chores.map((chore, i) =>
-              <ChoreEntry key={i} chore={chore} />
-            )
-          }
+          {this.props.chores.map((chore, i) =>
+            <ChoreEntry key={i} chore={chore} />
+          )}
         </div>
       </article>
     )
