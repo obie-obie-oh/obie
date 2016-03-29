@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MessageEntry from '../components/messages/message_entry'
-import {fetchMessages} from '../actions'
+import { fetchMessages } from '../actions'
 
 class Messages extends Component {
   constructor(props) {

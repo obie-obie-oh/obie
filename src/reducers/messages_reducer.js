@@ -1,14 +1,11 @@
-import { FETCH_MESSAGES } from '../actions'
+import { FETCH_MESSAGES } from '../actions/types'
 
 const INITIAL_STATE = []
 
 export default function (state = INITIAL_STATE, action) {
   switch(action.type) {
     case FETCH_MESSAGES: 
-      if (action.payload.data) {
-        return [...state, ...action.payload.data]
-      }
-      return state
+      return [...state, ...action.payload.data]
     default: 
       return state
   }
