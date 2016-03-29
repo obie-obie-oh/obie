@@ -42,3 +42,15 @@ export function fetchPayments() {
   }
 }
 
+export function fetchBills() {
+  const request = axios.get(`${ROOT_URL}/payment/pay`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    }
+  })
+
+  return {
+    type: actions.FETCH_BILLS,
+    payload: request
+  }
+}
