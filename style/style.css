@@ -3,14 +3,15 @@
   padding: 0;
 }
 body {
-  background-color: rgba(98, 133, 151, 0.15); 
-  background-image: url(images/fallback-gradient.png); 
+  /*background-color: rgba(98, 133, 151, 0.15); */
+  background-color: #F2FFFE;
+/*  background-image: url(images/fallback-gradient.png); 
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(98, 133, 151, 0.15)), to(#F2FFFE));
   background-image: -webkit-linear-gradient(top, rgba(98, 133, 151, 0.15), #F2FFFE); 
   background-image: -moz-linear-gradient(top, rgba(98, 133, 151, 0.15), #F2FFFE);
   background-image: -o-linear-gradient(top, rgba(98, 133, 151, 0.15), #F2FFFE);
   min-height: 100%;
-  height: auto;
+  height: auto;*/
 }
 h2 {
   margin: 0;
