@@ -13,14 +13,15 @@ export default (
   <Route path='/' component={App}>
     <IndexRedirect from='/' to='/dashboard' />
     <Route path='house' component={House}>
+      <IndexRedirect to='messages' />
+      <Route path='messages' component={Messages} />
+      <Route path='chores' component={Chores} />
       <Route path='finances' component={Finances}>
-        <IndexRedirect from='finances' to='/house/finances/payments' />
+        <IndexRedirect to='payments' />
         <Route path='bills' component={Bills} />
         <Route path='payments' component={Payments} />
         <Route path='charge' />
       </Route>
-      <Route path='messages' component={Messages} />
-      <Route path='chores' component={Chores} />
     </Route>
     <Route path='dashboard' component={Dashboard}>
 
