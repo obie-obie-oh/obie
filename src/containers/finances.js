@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import Bills from './bills.js'
 import Payments from './payments.js'
 import FinanceNavmenu from '../components/finance_navbar/finance_navmenu.js'
