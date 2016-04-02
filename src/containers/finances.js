@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import Bills from './bills.js'
 import Payments from './payments.js'
