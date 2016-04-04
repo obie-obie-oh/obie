@@ -11,7 +11,7 @@ import Dashboard from './containers/dashboard'
 
 export default (
   <Route path='/' component={App}>
-    <IndexRedirect from='/' to='/dashboard' />
+    <IndexRedirect to='/dashboard' />
     <Route path='house' component={House}>
       <IndexRedirect to='messages' />
       <Route path='messages' component={Messages} />
