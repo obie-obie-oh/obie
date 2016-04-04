@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchBills } from '../actions'
-import BillEntry from '../components/finances/bill_entry'
+import { fetchBills } from '../../actions'
+import BillEntry from './bill_entry'
 
 class Bills extends Component {
   componentWillMount() {
