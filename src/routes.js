@@ -3,12 +3,12 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router'
 import App from './components/app'
 import House from './components/house'
 import Messages from './containers/messages'
-import Finances from './containers/finances'
+import Finances from './components/finances/finances'
 import Bills from './components/finances/bills'
 import Payments from './components/finances/payments'
 import ChargeForm from './components/finances/charge_form'
 import Chores from './components/chores/chores'
-import Dashboard from './containers/dashboard'
+import Dashboard from './components/dashboard/dashboard'
 
 export default (
   <Route path='/' component={App}>
