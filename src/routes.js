@@ -6,6 +6,7 @@ import Messages from './containers/messages'
 import Finances from './containers/finances'
 import Bills from './containers/bills'
 import Payments from './containers/payments'
+import ChargeForm from './components/finances/charge_form'
 import Chores from './containers/chores'
 import Dashboard from './containers/dashboard'
 
@@ -20,7 +21,7 @@ export default (
         <IndexRedirect to='payments' />
         <Route path='bills' component={Bills} />
         <Route path='payments' component={Payments} />
-        <Route path='charge' />
+        <Route path='charge' component={ChargeForm} />
       </Route>
     </Route>
     <Route path='dashboard' component={Dashboard}>

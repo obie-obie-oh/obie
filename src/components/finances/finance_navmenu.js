@@ -14,7 +14,7 @@ class FinanceNavmenu extends Component {
     this.setState({ currentView })
   }
 
-  updateRoute(route) {
+  navigateToRoute(route) {
     this.setState({ currentView: route })
     browserHistory.push(`/house/finances/${route}`)
   }
@@ -30,11 +30,14 @@ class FinanceNavmenu extends Component {
   render() {
     return (
       <div className="btn-group" data-toggle="buttons">
-        <label className={this.getClasses('payments')} onClick={() => this.updateRoute('payments')}>
+        <label className={this.getClasses('payments')} onClick={() => this.navigateToRoute('payments')}>
           <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Payments
         </label>
-        <label className={this.getClasses('bills')} onClick={() => this.updateRoute('bills')}>
+        <label className={this.getClasses('bills')} onClick={() => this.navigateToRoute('bills')}>
           <input type="radio" name="options" id="option2" autoComplete="off" /> Bills
+        </label>
+        <label className={this.getClasses('charge')} onClick={() => this.navigateToRoute('charge')}>
+          <input type="radio" name="options" id="option2" autoComplete="off" /> Charge
         </label>
       </div>
     )
