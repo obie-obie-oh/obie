@@ -12,10 +12,4 @@ class Sidebar extends Component {
   }
 }
 
-//takes in global state tree
-function mapStateToProps (state) {
-  //return object of what you want to pass to component as a prop
-
-}
-
 export default connect()(Sidebar)
