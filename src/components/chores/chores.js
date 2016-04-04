@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ChoreEntry from '../components/chores/chore_entry'
-import { fetchChores } from '../actions'
+import ChoreEntry from './chore_entry'
+import { fetchChores } from '../../actions'
 
 class Chores extends Component {
   constructor(props) {
