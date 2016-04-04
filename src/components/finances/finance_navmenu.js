@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Link, browserHistory } from 'react-router'
 
 class FinanceNavmenu extends Component {
@@ -9,6 +9,16 @@ class FinanceNavmenu extends Component {
   }
 
   componentWillMount() {
+    this.changeLocation()
+    window.addEventListener('popstate', this.changeLocation.bind(this))
+  }
+
+
+  componentWillUnmount() {
+    window.removeEventListener('popstate', this.changeLocation.bind(this))
+  }
+
+  changeLocation() {
     const path = window.location.pathname.split('/')
     const currentView = path[path.length - 1]
     this.setState({ currentView })
@@ -20,7 +30,7 @@ class FinanceNavmenu extends Component {
   }
 
   getClasses(link) {
-    let classes = 'btn btn-primary-outline'
+    let classes = 'btn btn-primary-outline flex-button'
     if (this.state.currentView === link) {
       classes += ' active'
     }
@@ -29,7 +39,7 @@ class FinanceNavmenu extends Component {
 
   render() {
     return (
-      <div className="btn-group" data-toggle="buttons">
+      <div className="btn-group flex-navbar" data-toggle="buttons">
         <label className={this.getClasses('payments')} onClick={() => this.navigateToRoute('payments')}>
           <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Payments
         </label>
@@ -42,7 +52,6 @@ class FinanceNavmenu extends Component {
       </div>
     )
   }
-
 }
 
 export default FinanceNavmenu
