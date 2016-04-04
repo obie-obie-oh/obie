@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import Sidebar from '../containers/sidebar'
+import Sidebar from './sidebar/sidebar'
 
 export default class House extends Component {
   render() {

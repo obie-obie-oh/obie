@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Bills from './bills.js'
-import Payments from './payments.js'
-import FinanceNavmenu from '../components/finances/finance_navmenu.js'
+import Bills from './bills'
+import Payments from './payments'
+import FinanceNavmenu from './finance_navmenu'
 
 
 class Finances extends Component {

@@ -1,30 +1,48 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, { Component } from 'react'
+import { Link, browserHistory } from 'react-router'
 
-const FinanceNavmenu = () => {
-  return (
-    <ul>
-      <Link to='/house/finances/payments'>Payments</Link>
-      <Link to='/house/finances/bills'>Bills</Link>
-      <Link to='/house/finances/charge'>Charge</Link>
-    </ul>
-  )
+class FinanceNavmenu extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { currentView: '' }
+    this.getClasses.bind(this)
+  }
 
-  //The Style below is what I would like to use for this one but need to 
-  //figure out how to use it with Link
-  // return (
-  //   <div className="btn-group" data-toggle="buttons">
-  //     <label className="btn btn-primary-outline active">
-  //       <input type="radio" name="options" id="option1" autocomplete="off" checked />Payments
-  //     </label>
-  //     <label className="btn btn-primary-outline">
-  //       <input type="radio" name="options" id="option2" autocomplete="off" /> Bills
-  //     </label>
-  //     <label className="btn btn-primary-outline">
-  //       <input type="radio" name="options" id="option3" autocomplete="off" /> Charge
-  //     </label>
-  //   </div>
-  // )
+  componentWillMount() {
+    const path = window.location.pathname.split('/')
+    const currentView = path[path.length - 1]
+    this.setState({ currentView })
+  }
+
+  navigateToRoute(route) {
+    this.setState({ currentView: route })
+    browserHistory.push(`/house/finances/${route}`)
+  }
+
+  getClasses(link) {
+    let classes = 'btn btn-primary-outline'
+    if (this.state.currentView === link) {
+      classes += ' active'
+    }
+    return classes
+  }
+
+  render() {
+    return (
+      <div className="btn-group" data-toggle="buttons">
+        <label className={this.getClasses('payments')} onClick={() => this.navigateToRoute('payments')}>
+          <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Payments
+        </label>
+        <label className={this.getClasses('bills')} onClick={() => this.navigateToRoute('bills')}>
+          <input type="radio" name="options" id="option2" autoComplete="off" /> Bills
+        </label>
+        <label className={this.getClasses('charge')} onClick={() => this.navigateToRoute('charge')}>
+          <input type="radio" name="options" id="option2" autoComplete="off" /> Charge
+        </label>
+      </div>
+    )
+  }
+
 }
 
 export default FinanceNavmenu
