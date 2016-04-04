@@ -6,7 +6,7 @@ class Sidebar extends Component {
     return (
       <aside className="sidebar col-sm-3">
         sidebar goes here...
-        Styles are placeholders for when we really make a sidebar
+        this is a placeholder..
       </aside>
     )
   }
