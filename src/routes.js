@@ -7,7 +7,7 @@ import Finances from './containers/finances'
 import Bills from './components/finances/bills'
 import Payments from './components/finances/payments'
 import ChargeForm from './components/finances/charge_form'
-import Chores from './containers/chores'
+import Chores from './components/chores/chores'
 import Dashboard from './containers/dashboard'
 
 export default (
