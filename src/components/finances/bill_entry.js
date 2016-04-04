@@ -7,7 +7,6 @@ const BillEntry = ({
   <section className="bill-entry col-sm-12">
     <div className="row">
       <div className="col-xs-8">
-        {console.log(bill)}
         <p>
           <span className="glyphicon glyphicon-unchecked"></span>
           You owe
