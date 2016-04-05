@@ -32,11 +32,14 @@ html, body {
 /* 
 NEW STYLES HERE
 */
-/*
-.content-container {
-  display: inline-block;
-  width: 50vw;
-}*/
+
+.flex-navbar {
+  display: flex;
+}
+
+.flex-button {
+  flex-grow: 1;
+}
 
 /* 
 NEW STYLES HERE
