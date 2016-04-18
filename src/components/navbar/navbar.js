@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
-        <Navmenu />
+        <Navmenu format="navmenu"/>
       </nav>
     )
   }
