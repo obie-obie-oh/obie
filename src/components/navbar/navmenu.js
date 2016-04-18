@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-const Navmenu = () => {
+const Navmenu = ({format}) => {
   return (
-    <ul className="navmenu">
-      <Link to='/house/messages'>Messages</Link>
-      <Link to='/house/finances'>Finance</Link>
-      <Link to='/house/chores'>Chores</Link>
-      <Link to='/dashboard'>Dashboard</Link>
+    <ul className={format === "burger" ? "burger-menu" : "navmenu"}>
+      <li><Link to='/house/messages'>Messages</Link></li>
+      <li><Link to='/house/finances'>Finance</Link></li>
+      <li><Link to='/house/chores'>Chores</Link></li>
+      <li><Link to='/dashboard'>Dashboard</Link></li>
     </ul>
   )
 }
