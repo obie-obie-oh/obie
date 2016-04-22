@@ -7,7 +7,6 @@ class Chores extends Component {
   render() {
     return (
       <article className="chores col-sm-9">
-        <h2 className="text-center chore-header">Chores</h2>
         <ChoresNavmenu />
         {this.props.children}
       </article>

@@ -31,7 +31,7 @@ class ChoresNavmenu extends Component {
   getClasses(link) {
     let classes = 'btn btn-info flex-button'
     if (this.state.currentView === link) {
-      classes += 'active'
+      classes += ' active'
     }
     return classes
   }
