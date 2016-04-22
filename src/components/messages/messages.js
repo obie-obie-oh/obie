@@ -14,7 +14,7 @@ class Messages extends Component {
 
   render() {
     return (
-      <article className="messages content-container col-sm-9">
+      <article className="messages content-container col-md-9">
         <h2 className="text-center">Messages</h2>
         <section className="message-list">
           {this.props.messages.map((message, i) => 
