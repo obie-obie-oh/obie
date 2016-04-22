@@ -8,6 +8,8 @@ import Bills from './components/finances/bills'
 import Payments from './components/finances/payments'
 import ChargeForm from './components/finances/charge_form'
 import Chores from './components/chores/chores'
+import ChoresList from './components/chores/chore_list'
+import ChoresAssign from './components/chores/chores_assign'
 import Dashboard from './components/dashboard/dashboard'
 
 export default (
@@ -16,7 +18,11 @@ export default (
     <Route path='house' component={House}>
       <IndexRedirect to='messages' />
       <Route path='messages' component={Messages} />
-      <Route path='chores' component={Chores} />
+      <Route path='chores' component={Chores} >
+        <IndexRedirect to="list" />
+        <Route path='list' component={ChoresList} />
+        <Route path='assign' component={ChoresAssign} />
+      </Route>
       <Route path='finances' component={Finances}>
         <IndexRedirect to='payments' />
         <Route path='bills' component={Bills} />

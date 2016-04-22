@@ -47,7 +47,7 @@ class FinanceNavmenu extends Component {
           <input type="radio" name="options" id="option2" autoComplete="off" /> Bills
         </label>
         <label className={this.getClasses('charge')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('charge')}>
-          <input type="radio" name="options" id="option2" autoComplete="off" /> Charge
+          <input type="radio" name="options" id="option3" autoComplete="off" /> Charge
         </label>
       </div>
     )
