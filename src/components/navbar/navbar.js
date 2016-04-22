@@ -5,7 +5,7 @@ import Navmenu from './navmenu'
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbar in-desktop">
         <Navmenu format="navmenu"/>
       </nav>
     )

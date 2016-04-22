@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class Sidebar extends Component {
   render() {
     return (
-      <aside className="sidebar col-sm-3">
+      <aside className="sidebar col-sm-3 in-desktop">
         sidebar goes here...
         this is a placeholder..
       </aside>
