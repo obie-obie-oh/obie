@@ -4,6 +4,19 @@ import * as actions from './types'
 const ROOT_URL = 'https://obie.herokuapp.com'
 const NEW_API = 'http://localhost:6969'
 
+export function fetchUsers() {
+  const request = axios.get(`${ROOT_URL}/users/`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    }
+  })
+
+  return {
+    type: actions.FETCH_USERS,
+    payload: request
+  }
+}
+
 export function fetchMessages() {
   const request = axios.get(`${ROOT_URL}/messages`, {
     headers: {
