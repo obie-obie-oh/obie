@@ -6,13 +6,10 @@ import NavMenu from './navmenu'
 
 
 const BurgerMenu = () => {
-  
   return (
-    <div className="in-mobile">
-      <Menu>
-        <NavMenu format="burger"/>
-      </Menu>
-    </div>
+    <Menu>
+      <NavMenu format="burger"/>
+    </Menu>
   )
 }
 
