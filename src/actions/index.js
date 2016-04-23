@@ -54,3 +54,18 @@ export function fetchBills() {
     payload: request
   }
 }
+
+export function createChore(props) {
+  console.log(typeof props)
+  const request = axios.post(`${ROOT_URL}/chores`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    },
+    data: props
+  })
+
+  return {
+    type: actions.CREATE_CHORE,
+    payload: request
+  }
+}
