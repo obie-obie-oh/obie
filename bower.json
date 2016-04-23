@@ -1,0 +1,22 @@
+{
+  "name": "obie",
+  "description": "the dopest tenant/landlord app of all time.",
+  "main": "index.js",
+  "authors": [
+    "Justin Joey Nick"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jmancherje/obie",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "tether": "~1.3.1"
+  }
+}
