@@ -30,7 +30,7 @@ class FinanceNavmenu extends Component {
   }
 
   getClasses(link) {
-    let classes = 'btn btn-info flex-button'
+    let classes = 'btn btn-primary-outline flex-button'
     if (this.state.currentView === link) {
       classes += ' active'
     }
@@ -40,13 +40,13 @@ class FinanceNavmenu extends Component {
   render() {
     return (
       <div className="btn-group flex-navbar" data-toggle="buttons">
-        <label className={this.getClasses('payments')} onClick={() => this.navigateToRoute('payments')}>
+        <label className={this.getClasses('payments')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('payments')}>
           <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Payments
         </label>
-        <label className={this.getClasses('bills')} onClick={() => this.navigateToRoute('bills')}>
+        <label className={this.getClasses('bills')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('bills')}>
           <input type="radio" name="options" id="option2" autoComplete="off" /> Bills
         </label>
-        <label className={this.getClasses('charge')} onClick={() => this.navigateToRoute('charge')}>
+        <label className={this.getClasses('charge')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('charge')}>
           <input type="radio" name="options" id="option2" autoComplete="off" /> Charge
         </label>
       </div>
