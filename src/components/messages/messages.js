@@ -31,7 +31,7 @@ class Messages extends Component {
 
 function mapStateToProps (state) {
   return {
-    messages: state.reducers.messages
+    messages: state.messages
   }
 }
 
