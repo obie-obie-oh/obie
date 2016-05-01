@@ -62,8 +62,9 @@ const UserCustomEntry = ({
     <div className="user-custom-name">
       <label>{user.name}</label>
     </div>
-    <div className="user-custom-input">
-      <input />
+    <div className="input-group">
+      <div className="input-group-addon">$</div>
+      <input className="form-control" type='number'/>
     </div>
   </section>
 )
@@ -75,3 +76,19 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps, {fetchUsers})(ChargeForm)
+
+/*
+.charge-form-container {
+  border: 1px solid black;
+  height: 80vh;
+}
+
+.charge-form-section > div {
+  display: inline-block;
+}
+
+.user-custom-entry > div {
+  display: inline-block;
+  width: 15%;
+}
+*/

@@ -112,3 +112,12 @@ React Burger Menu Styles:
  End React Burger Menu Styles:
 */
 
+.burger-menu > li {
+  list-style: none;
+}
+
+.navmenu > li {
+  list-style: none;
+  display: inline-block;
+}
+
