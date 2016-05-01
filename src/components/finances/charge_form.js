@@ -41,14 +41,14 @@ class ChargeForm extends Component {
             </div>
           </div>
           <div className="charge-button-container">
-            <button className="charge-form-button">Split Evenly</button>
+            <button className="charge-form-button btn-info">Split Evenly</button>
           </div>
           <div>
             {this.props.users.map((user, i) => 
               <UserCustomEntry key={i} user={user} />
             )}
           </div>
-          <button>Submit</button>
+          <button className="charge-form-button btn-info">Submit</button>
         </form>
       </div>
     )
@@ -64,7 +64,7 @@ const UserCustomEntry = ({
     </div>
     <div className="input-group">
       <div className="input-group-addon">$</div>
-      <input className="form-control" type='number'/>
+      <input className="form-control custom-input" width="10" type='number'/>
     </div>
   </section>
 )

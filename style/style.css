@@ -121,3 +121,28 @@ React Burger Menu Styles:
   display: inline-block;
 }
 
+.custom-split {
+  width: 20%;
+}
+
+.charge-form-button {
+  border-radius: 5px;
+}
+
+.sidebar-user-container {
+  width: 100%;
+}
+
+.sidebar-user {
+  margin: 5% 0%;
+}
+
+.sidebar-user-image {
+  width: 15%;
+  height: 15%;
+}
+
+.sidebar-user-name {
+  display: inline-block;
+  margin-left: 10%
+}
