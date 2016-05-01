@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link, browserHistory } from 'react-router'
 
-class FinanceNavmenu extends Component {
+class ChoresNavmenu extends Component {
   constructor(props) {
     super(props)
     this.state = { currentView: '' }
@@ -13,20 +13,19 @@ class FinanceNavmenu extends Component {
     window.addEventListener('popstate', this.changeLocation.bind(this))
   }
 
-
   componentWillUnmount() {
     window.removeEventListener('popstate', this.changeLocation.bind(this))
   }
 
   changeLocation() {
     const path = window.location.pathname.split('/')
-    const currentView = path[path.length - 1]
+    const currentView =path[path.length - 1]
     this.setState({ currentView })
   }
 
   navigateToRoute(route) {
-    this.setState({ currentView: route })
-    browserHistory.push(`/house/finances/${route}`)
+    this.setState({ currentView: route})
+    browserHistory.push(`/house/chores/${route}`)
   }
 
   getClasses(link) {
@@ -38,20 +37,17 @@ class FinanceNavmenu extends Component {
   }
 
   render() {
-    return (
+    return(
       <div className="btn-group flex-navbar" data-toggle="buttons">
-        <label className={this.getClasses('payments')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('payments')}>
-          <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Payments
+        <label className={this.getClasses('list')} onClick={() => this.navigateToRoute('list')}>
+          <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Chores
         </label>
-        <label className={this.getClasses('bills')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('bills')}>
-          <input type="radio" name="options" id="option2" autoComplete="off" /> Bills
-        </label>
-        <label className={this.getClasses('charge')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('charge')}>
-          <input type="radio" name="options" id="option3" autoComplete="off" /> Charge
+        <label className={this.getClasses('assign')} onClick={() => this.navigateToRoute('assign')}>
+          <input type="radio" name="options" id="option2" autoComplete="off" /> Assign Chore
         </label>
       </div>
     )
   }
 }
 
-export default FinanceNavmenu
+export default ChoresNavmenu
