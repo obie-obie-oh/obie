@@ -58,19 +58,19 @@ function validate(values) {
   const errors = {};
 
   if (!values.userId) {
-    errors.userId = 'Enter a username';
+    errors.userId = 'Enter a roommate';
   }
 
   if (!values.name) {
-    errors.name = 'Enter categories';
+    errors.name = 'Enter chore';
   }
 
   if (!values.category) {
-    errors.category = 'Enter some content';
+    errors.category = 'Enter category';
   }
 
   if (!values.dueDate) {
-    errors.dueDate = 'Enter some content';
+    errors.dueDate = 'Enter a due date';
   }
 
   return errors;
@@ -81,7 +81,7 @@ function validate(values) {
 
 
 export default reduxForm({
-  form: 'PostsNewForm',
+  form: 'ChoresNewForm',
   fields: ['userId', 'name', 'category', 'dueDate'],
   validate
 }, null, {createChore})(ChoresAssign);

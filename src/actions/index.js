@@ -2,6 +2,7 @@ import axios from 'axios'
 import * as actions from './types'
 
 const ROOT_URL = 'https://obie.herokuapp.com'
+const NEW_API = 'http://localhost:6969'
 
 export function fetchMessages() {
   const request = axios.get(`${ROOT_URL}/messages`, {
@@ -17,7 +18,7 @@ export function fetchMessages() {
 }
 
 export function fetchChores() {
-  const request = axios.get(`${ROOT_URL}/chores`, {
+  const request = axios.get(`${NEW_API}/api/chores`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -57,7 +58,8 @@ export function fetchBills() {
 
 export function createChore(props) {
   console.log(typeof props)
-  const request = axios.post(`${ROOT_URL}/chores`, {
+  console.log("PROPS", props)
+  const request = axios.post(`${NEW_API}/api/chores`, {
     headers: {
       token: localStorage.getItem('obie')
     },
