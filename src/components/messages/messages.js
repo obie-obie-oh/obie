@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MessageEntry from './message_entry'
+import MessageForm from './message_form'
 import { fetchMessages } from '../../actions'
 
 class Messages extends Component {
@@ -13,9 +14,11 @@ class Messages extends Component {
   }
 
   render() {
+    console.log('messages', this.props)
     return (
       <article className="messages content-container col-md-9">
         <h2 className="text-center">Messages</h2>
+        <MessageForm />
         <section className="message-list">
           {this.props.messages.map((message, i) => 
             <MessageEntry key={i} message={message} />

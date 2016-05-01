@@ -5,12 +5,12 @@ import BurgerMenu from './navbar/burger_menu'
 
 export default class App extends Component {
   render() {
-      return (
-        <div>
-          <Navbar />
-          <BurgerMenu />
-          {this.props.children}
-        </div>
-      )
+    return (
+      <div>
+        <Navbar />
+        <BurgerMenu />
+        {this.props.children}
+      </div>
+    )
   }
 }
