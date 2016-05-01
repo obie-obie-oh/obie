@@ -5,4 +5,5 @@ export const FETCH_PAYMENTS = 'fetch_payments'
 export const FETCH_BILLS = 'fetch_bills'
 export const CREATE_CHORE = 'create_chore'
 export const FETCH_USERS = 'fetch_users'
+export const CREATE_MESSAGE = 'create_message'
 

@@ -14,7 +14,6 @@ class ChoresAssign extends Component {
     
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <h3>Create A New Post</h3>
 
         <div className={`form-group ${userId.touched && userId.invalid ? 'has-danger': ''}`} >
           <label>User ID</label>
