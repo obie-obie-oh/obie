@@ -40,8 +40,9 @@ const SidebarUser = ({
 )
 
 function mapStateToProps (state) {
+  console.log("state", state)
   return {
-    users: state.finances.users
+    users: state.reducers.finances.users
   }
 }
 
