@@ -69,6 +69,7 @@ const UserCustomEntry = ({
 )
 
 function mapStateToProps (state) {
+  console.log('whole state.. ', state)
   return {
     users: state.finances.users
   }
