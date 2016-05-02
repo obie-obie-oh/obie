@@ -31,6 +31,19 @@ export function fetchUsers() {
   }
 }
 
+export function fetchUserImage() {
+  const request = axios.get(`${NEW_API}/api/users/image`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    }
+  })
+
+  return {
+    type: actions.FETCH_USER_IMAGE,
+    payload: request
+  }
+}
+
 export function fetchMessages() {
   const request = axios.get(`${NEW_API}/api/messages`, {
     headers: {
