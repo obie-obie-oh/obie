@@ -18,7 +18,7 @@ export function fetchUsers() {
 }
 
 export function fetchMessages() {
-  const request = axios.get(`${ROOT_URL}/messages`, {
+  const request = axios.get(`${NEW_API}/api/messages`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -84,3 +84,19 @@ export function createChore(props) {
     payload: request
   }
 }
+
+export function createMessage(props) {
+  const request = axios.post(`${NEW_API}/api/messages`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    },
+    data: props
+  })
+
+  return {
+    type: actions.CREATE_MESSAGE,
+    payload: request
+  }
+}
+
+
