@@ -2,8 +2,7 @@ import { FETCH_PAYMENTS, FETCH_BILLS, FETCH_USERS } from '../actions/types'
 
 const INITIAL_STATE = {
   payments: [],
-  bills: [],
-  users: []
+  bills: []
 }
 
 export default function(state = INITIAL_STATE, action) {

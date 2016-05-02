@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUsers } from '../../actions'
 
 class ChargeForm extends Component {
   constructor(props) {
     super(props)
   }
 
-  componentWillMount() {
-    this.props.fetchUsers()
-  }
+  // componentWillMount() {
+
+  // }
 
   render() {
     //billname
@@ -44,9 +43,9 @@ class ChargeForm extends Component {
             <button className="charge-form-button btn-info">Split Evenly</button>
           </div>
           <div>
-            {this.props.users.map((user, i) => 
+            {/*this.props.users.map((user, i) => 
               <UserCustomEntry key={i} user={user} />
-            )}
+            )*/}
           </div>
           <button className="charge-form-button btn-info">Submit</button>
         </form>
@@ -75,7 +74,7 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchUsers})(ChargeForm)
+export default connect(mapStateToProps)(ChargeForm)
 
 /*
 .charge-form-container {
