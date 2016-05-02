@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUsers } from '../../actions'
 
 class Sidebar extends Component {
   constructor(props) {
     super(props)
-  }
-
-  componentWillMount() {
-    this.props.fetchUsers()
   }
 
   render() {
@@ -19,9 +14,10 @@ class Sidebar extends Component {
         </figure>
         <div className="sidebar-user-container">
           <header className="sidebar-roster-header">
-            <h2>Roommates:</h2>
+            <h3>{this.props.house.name}</h3>
+            <h4>Roommates:</h4>
           </header>
-          {this.props.users.map((user, i) => 
+          {this.props.house.users.map((user, i) => 
             <SidebarUser key={i} user={user} />
           )}
         </div>
@@ -40,10 +36,9 @@ const SidebarUser = ({
 )
 
 function mapStateToProps (state) {
-  console.log("state", state)
   return {
-    users: state.finances.users
+    house: state.house
   }
 }
 
-export default connect(mapStateToProps, {fetchUsers})(Sidebar)
+export default connect(mapStateToProps)(Sidebar)

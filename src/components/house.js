@@ -1,8 +1,15 @@
 import React from 'react'
 import { Component } from 'react'
+import { connect } from 'react-redux'
 import Sidebar from './sidebar/sidebar'
+import { fetchHouseData, fetchUsers } from '../actions/'
 
-export default class House extends Component {
+class House extends Component {
+  componentWillMount() {
+    this.props.fetchHouseData()
+    this.props.fetchUsers()
+  }
+
   render() {
     return (
       <div>
@@ -12,3 +19,5 @@ export default class House extends Component {
     )
   }
 }
+
+export default connect(null, { fetchHouseData, fetchUsers })(House)

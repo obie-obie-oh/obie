@@ -4,8 +4,22 @@ import * as actions from './types'
 const ROOT_URL = 'https://obie.herokuapp.com'
 const NEW_API = 'http://localhost:6969'
 
+export function fetchHouseData() {
+  const request = axios.get(`${NEW_API}/api/houses`, {
+    headers: { 
+      token: localStorage.getItem('obie') 
+    }
+  })
+
+  return {
+    type: actions.FETCH_HOUSE_DATA,
+    payload: request
+  }
+}
+
 export function fetchUsers() {
-  const request = axios.get(`${ROOT_URL}/users/`, {
+  // const request = axios.get(`${ROOT_URL}/users`, {
+  const request = axios.get(`${NEW_API}/api/users/roommates`, {
     headers: {
       token: localStorage.getItem('obie')
     }
