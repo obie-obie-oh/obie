@@ -14,7 +14,7 @@ const PaymentEntry = ({
       </span>
     </p>
     <p>
-      by {h.getPaymentDate(payment.dueDate)}
+      by { payment.due_date }
     </p>
   </section>
 )

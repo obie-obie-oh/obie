@@ -71,7 +71,7 @@ export function fetchChores() {
 }
 
 export function fetchPayments() {
-  const request = axios.get(`${ROOT_URL}/payment/owed`, {
+  const request = axios.get(`${NEW_API}/api/payments`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -84,7 +84,7 @@ export function fetchPayments() {
 }
 
 export function fetchBills() {
-  const request = axios.get(`${ROOT_URL}/payment/pay`, {
+  const request = axios.get(`${NEW_API}/api/bills`, {
     headers: {
       token: localStorage.getItem('obie')
     }

@@ -5,7 +5,9 @@ import BillEntry from './bill_entry'
 
 class Bills extends Component {
   componentWillMount() {
-    this.props.fetchBills()
+    this.props.fetchBills().then(function(bills) {
+      console.log("Bills", bills)
+    })
   }
 
   render() {
