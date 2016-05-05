@@ -9,7 +9,9 @@ export default class App extends Component {
       <div>
         <Navbar />
         <BurgerMenu />
-        {this.props.children}
+        <div style={{marginTop: '30px'}}>
+          {this.props.children}
+        </div>
       </div>
     )
   }

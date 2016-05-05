@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navmenu from './navmenu'
 import { Link } from 'react-router'
-import BurgerMenu from './burger_menu'
 
 class Navbar extends Component {
-  
   toggleSideMenu(e) {
     const burger = document.querySelector('.bm-burger-button > button')
     if (burger) {
