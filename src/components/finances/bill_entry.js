@@ -22,7 +22,7 @@ const BillEntry = ({
           </span>
         </p>
         <p>
-          by { bill.due_date }
+          by { h.getPaymentDate(bill.due_date) }
         </p>
       </div>
       <div className="col-xs-4">
