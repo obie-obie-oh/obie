@@ -14,7 +14,6 @@ class Messages extends Component {
   }
 
   render() {
-    console.log('messages', this.props)
     return (
       <article className="messages content-container col-md-9">
         <h2 className="text-center">Messages</h2>

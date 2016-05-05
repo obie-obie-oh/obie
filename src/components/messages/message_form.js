@@ -1,10 +1,14 @@
-import React, {Component} from 'react'
-import {reduxForm} from 'redux-form'
-import { createMessage } from '../../actions'
+import React, { Component } from 'react'
+import { reduxForm } from 'redux-form'
+import { createMessage, fetchMessages } from '../../actions'
 
 class MessageForm extends Component {
   onSubmit(props) {
     this.props.createMessage(props)
+      .then(() => {
+        this.props.fetchMessages()
+        this.props.resetForm()
+      })
   }
 
   render () {
@@ -40,4 +44,4 @@ export default reduxForm({
   form: 'MessageForm',
   fields: ['text'],
   validate
-}, null, {createMessage})(MessageForm);
+}, null, { createMessage, fetchMessages })(MessageForm);
