@@ -5,20 +5,8 @@ import { Link } from 'react-router'
 import BurgerMenu from './burger_menu'
 
 class Navbar extends Component {
-  componentDidMount() {
-    const burger = document.querySelector('.bm-burger-button > button')
-    console.log('burger: ', burger);
-    burger.addEventListener('click', (e) => {
-      console.log('burger menu click')
-      if (burger) {
-        burger.click()
-      }
-      e.preventDefault()
-    })
-  }
-
+  
   toggleSideMenu(e) {
-    e.preventDefault()
     const burger = document.querySelector('.bm-burger-button > button')
     if (burger) {
       burger.click();
