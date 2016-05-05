@@ -2,26 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navmenu from './navmenu'
 import { Link } from 'react-router'
-import BurgerMenu from './burger_menu'
 
 class Navbar extends Component {
-  componentDidMount() {
-    const burger = document.querySelector('.bm-burger-button > button')
-    console.log('burger: ', burger);
-    burger.addEventListener('click', (e) => {
-      console.log('burger menu click')
-      if (burger) {
-        burger.click()
-      }
-      e.preventDefault()
-    })
-  }
-
   toggleSideMenu(e) {
-    e.preventDefault()
     const burger = document.querySelector('.bm-burger-button > button')
     if (burger) {
-      console.log('in condish')
       burger.click();
     }
   }
@@ -43,6 +28,17 @@ class Navbar extends Component {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/dashboard">Dashboard</Link>
+            </li>
+
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/landlord/messages">LLMessages</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/landlord/finances">LLFinances</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/landlord/chores">LLChores</Link>
             </li>
           </ul>
         </div>
