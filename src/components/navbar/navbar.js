@@ -21,7 +21,6 @@ class Navbar extends Component {
     e.preventDefault()
     const burger = document.querySelector('.bm-burger-button > button')
     if (burger) {
-      console.log('in condish')
       burger.click();
     }
   }

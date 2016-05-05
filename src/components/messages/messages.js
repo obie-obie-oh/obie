@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import MessageEntry from './message_entry'
 import MessageForm from './message_form'
 import { fetchMessages } from '../../actions'
+import $ from 'jquery'
 
 class Messages extends Component {
   constructor(props) {
