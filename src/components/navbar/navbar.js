@@ -15,7 +15,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-full navbar-dark bg-primary">
         <div className="in-desktop">
-          <a className="navbar-brand" href="/">Obie</a>
+          <Link className="navbar-brand" to="/">Obie</Link>
           <ul className="nav navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/house/messages">Messages</Link>
@@ -43,9 +43,9 @@ class Navbar extends Component {
           </ul>
         </div>
         <div className="in-mobile">
-          <ul className="nav navbar-nav">
+          <ul className="nav navbar-nav burger-icon">
             <li className="nav-item">
-              <Link onClick={this.toggleSideMenu} to="/" className="nav-link">☰</Link>
+              <Link id="burger-link" onClick={this.toggleSideMenu} to="/" className="nav-link">☰</Link>
             </li>
           </ul>
         </div>

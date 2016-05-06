@@ -43,9 +43,9 @@ class ChargeForm extends Component {
             <button className="charge-form-button btn-info">Split Evenly</button>
           </div>
           <div>
-            {/*this.props.users.map((user, i) => 
+            {this.props.users.map((user, i) => 
               <UserCustomEntry key={i} user={user} />
-            )*/}
+            )}
           </div>
           <button className="charge-form-button btn-info">Submit</button>
         </form>
@@ -69,9 +69,8 @@ const UserCustomEntry = ({
 )
 
 function mapStateToProps (state) {
-  console.log('whole state.. ', state)
   return {
-    users: state.finances.users
+    users: state.house.users
   }
 }
 
