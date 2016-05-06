@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MessageEntry from './message_entry'
-import { fetchMessages } from '../../actions'
+import { fetchLandlordMessages } from '../../actions'
 import MessageForm from './message_form'
 
 class LandlordMessages extends Component {
@@ -10,14 +10,13 @@ class LandlordMessages extends Component {
   }
 
   componentWillMount() {
-    // TODO: fetch landlord messages? or keep them together
-    this.props.fetchMessages()
+    this.props.fetchLandlordMessages()
   }
 
   render() {
     return (
       <article className="messages content-container col-md-9">
-        <MessageForm />
+        <MessageForm landlord={true} />
         <section className="message-list">
           {this.props.messages.map((message, i) => 
             <MessageEntry key={i} message={message} />
@@ -30,10 +29,8 @@ class LandlordMessages extends Component {
 
 function mapStateToProps (state) {
   return {
-    // TODO: get landlord message from state once they exist
-    // messages: state.landlordMessages
-    messages: state.messages
+    messages: state.landlordMessages
   }
 }
 
-export default connect(mapStateToProps, { fetchMessages })(LandlordMessages)
+export default connect(mapStateToProps, { fetchLandlordMessages })(LandlordMessages)

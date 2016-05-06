@@ -16,7 +16,7 @@ class RoommateMessages extends Component {
   render() {
     return (
       <article className="messages content-container col-md-9">
-        <MessageForm />
+        <MessageForm landlord={false} />
         <section className="message-list">
           {this.props.messages.map((message, i) => 
             <MessageEntry key={i} message={message} />
@@ -33,4 +33,4 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchMessages})(RoommateMessages)
+export default connect(mapStateToProps, { fetchMessages })(RoommateMessages)

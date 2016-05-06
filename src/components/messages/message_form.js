@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import { reduxForm } from 'redux-form'
-import { createMessage, fetchMessages } from '../../actions'
+import { submitRoommateMessage, submitLandlordMessage, fetchMessages, fetchLandlordMessages } from '../../actions'
 
 class MessageForm extends Component {
   onSubmit(props) {
-    this.props.createMessage(props)
-      .then(() => {
-        this.props.fetchMessages()
-        this.props.resetForm()
-      })
+    if (this.props.landlord) {
+      this.props.submitLandlordMessage(props)
+        .then(() => {
+          this.props.fetchLandlordMessages()
+          this.props.resetForm()
+        })
+    } else {
+      this.props.submitRoommateMessage(props)
+        .then(() => {
+          this.props.fetchMessages()
+          this.props.resetForm()
+        })
+    }
   }
 
   render () {
@@ -44,4 +52,4 @@ export default reduxForm({
   form: 'MessageForm',
   fields: ['text'],
   validate
-}, null, { createMessage, fetchMessages })(MessageForm);
+}, null, { submitRoommateMessage, submitLandlordMessage, fetchMessages, fetchLandlordMessages })(MessageForm);
