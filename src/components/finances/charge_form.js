@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
-import { createBill, fetchBills } from '../../actions'
+import { submitBill, fetchBills } from '../../actions'
+import DynamicForm from '../dynamic_form' 
 //export const fields = [ 'users', 'billName', 'billTotal', 'billDueDate' ]
 //TODO: import necessary
 
@@ -13,7 +14,7 @@ class ChargeForm extends Component {
 
   onSubmit(props) {
     //TODO: change from createMessage to whatever action
-    this.props.createBill(props)
+    this.props.submitBill(props)
       .then(() => {
         //TODO: change to equiv of fetchMessages
         this.props.fetchBills()
@@ -22,15 +23,16 @@ class ChargeForm extends Component {
   }
 
   render() {
+    var userList = [];
+    this.props.house.users.forEach(user => 
+      userList.push(user.id)
+    )
     const {
       fields: { billName, billTotal, billDueDate },
       handleSubmit,
       resetForm,
       submitting
     } = this.props
-    this.props.house.users.forEach(user => 
-      this.props.fields[user.id] = Object.assign({}, user)
-    )
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className={`form-group ${billName.touched && billName.invalid ? 'has-danger': ''}`} >
@@ -54,6 +56,7 @@ class ChargeForm extends Component {
             </div>
           </div>
         )}
+        
         <div className={`form-group ${billDueDate.touched && billDueDate.invalid ? 'has-danger': ''}`} >
           <input placeholder="Select bill due date..." type="date" className="form-control" {...billDueDate} />
           <div className="text-help">
@@ -79,6 +82,7 @@ const UserCustomEntry = ({
 )
 
 function validate(values) {
+  console.log('VALIDATION VALUES', values)
   const errors = {};
   if (!values.billName) {
     errors.billName = 'Enter a name';
@@ -96,5 +100,5 @@ export default reduxForm({
   form: 'ChargeForm',
   fields: ['billName', 'billTotal', 'billDueDate'],
   validate
-}, mapStateToProps, { createBill, fetchBills })(ChargeForm);
+}, mapStateToProps, { submitBill, fetchBills })(ChargeForm);
 
