@@ -15,7 +15,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-full navbar-dark bg-primary">
         <div className="in-desktop">
-          <a className="navbar-brand" href="/">Obie</a>
+          <Link className="navbar-brand" to="/">Obie</Link>
           <ul className="nav navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/house/messages">Messages</Link>
