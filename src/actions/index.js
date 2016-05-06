@@ -57,6 +57,19 @@ export function fetchMessages() {
   }
 }
 
+export function fetchLandlordMessages() {
+  const request = axios.get(`${NEW_API}/api/messages/landlord`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    }
+  })
+
+  return {
+    type: actions.FETCH_LANDLORD_MESSAGES,
+    payload: request
+  }
+}
+
 export function fetchChores() {
   const request = axios.get(`${NEW_API}/api/chores`, {
     headers: {
@@ -97,8 +110,6 @@ export function fetchBills() {
 }
 
 export function createChore(props) {
-  console.log(typeof props)
-  console.log("PROPS", props)
   const request = axios.post(`${NEW_API}/api/chores`, {
     headers: {
       token: localStorage.getItem('obie')
@@ -112,7 +123,7 @@ export function createChore(props) {
   }
 }
 
-export function createMessage(props) {
+export function submitRoommateMessage(props) {
   const request = axios.post(`${NEW_API}/api/messages`, {
     headers: {
       token: localStorage.getItem('obie')
@@ -121,10 +132,11 @@ export function createMessage(props) {
   })
 
   return {
-    type: actions.CREATE_MESSAGE,
+    type: actions.SUBMIT_ROOMMATE_MESSAGE,
     payload: request
   }
 }
+
 
 export function createBill(props) {
   const request = axios.post(`${NEW_API}/api/bills`, {
@@ -133,11 +145,23 @@ export function createBill(props) {
     },
     data: props
   })
-
+  
   return {
     type: actions.CREATE_BILL,
     payload: request
   }
 }
 
+export function submitLandlordMessage(props) {
+  const request = axios.post(`${NEW_API}/api/messages/landlord`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    },
+    data: props
+  })
 
+  return {
+    type: actions.SUBMIT_LANDLORD_MESSAGE,
+    payload: request
+  }
+}
