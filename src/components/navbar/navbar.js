@@ -43,9 +43,9 @@ class Navbar extends Component {
           </ul>
         </div>
         <div className="in-mobile">
-          <ul className="nav navbar-nav">
+          <ul className="nav navbar-nav burger-icon">
             <li className="nav-item">
-              <Link onClick={this.toggleSideMenu} to="/" className="nav-link">☰</Link>
+              <Link id="burger-link" onClick={this.toggleSideMenu} to="/" className="nav-link">☰</Link>
             </li>
           </ul>
         </div>
