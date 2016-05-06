@@ -3,6 +3,8 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router'
 import App from './components/app'
 import House from './components/house'
 import Messages from './components/messages/messages'
+import RoommateMessages from './components/messages/roommate_messages'
+import LandlordMessages from './components/messages/landlord_messages'
 import Finances from './components/finances/finances'
 import Bills from './components/finances/bills'
 import Payments from './components/finances/payments'
@@ -17,7 +19,11 @@ export default (
     <IndexRedirect to='/house' />
     <Route path='house' component={House}>
       <IndexRedirect to='messages' />
-      <Route path='messages' component={Messages} />
+      <Route path='messages' component={Messages}>
+        <IndexRedirect to="roommates" />
+        <Route path="roommates" component={RoommateMessages} />
+        <Route path="landlord" component={LandlordMessages} />
+      </Route>
       <Route path='chores' component={Chores} >
         <IndexRedirect to="list" />
         <Route path='list' component={ChoresList} />
