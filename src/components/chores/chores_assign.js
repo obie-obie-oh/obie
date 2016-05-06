@@ -5,7 +5,6 @@ import { createChore } from '../../actions'
 
 class ChoresAssign extends Component {
   onSubmit(props) {
-    console.log(typeof props);
     this.props.createChore(props)
   }
 
