@@ -126,4 +126,18 @@ export function createMessage(props) {
   }
 }
 
+export function createBill(props) {
+  const request = axios.post(`${NEW_API}/api/bills`, {
+    headers: {
+      token: localStorage.getItem('obie')
+    },
+    data: props
+  })
+
+  return {
+    type: actions.CREATE_BILL,
+    payload: request
+  }
+}
+
 
