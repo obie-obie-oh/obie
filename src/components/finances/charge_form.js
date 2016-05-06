@@ -1,55 +1,68 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form'
+import { createBill, fetchBills } from '../../actions'
+//export const fields = [ 'users', 'billName', 'billTotal', 'billDueDate' ]
+//TODO: import necessary
+
 
 class ChargeForm extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  // componentWillMount() {
-
+  // constructor(props) {
+  //   super(props)
   // }
 
+  onSubmit(props) {
+    //TODO: change from createMessage to whatever action
+    this.props.createBill(props)
+      .then(() => {
+        //TODO: change to equiv of fetchMessages
+        this.props.fetchBills()
+        this.props.resetForm()
+      })
+  }
+
   render() {
-    //billname
-    //total       due date
-    //split button    custom button
-                      //user list
-                      //submit
+    const {
+      fields: { billName, billTotal, billDueDate },
+      handleSubmit,
+      resetForm,
+      submitting
+    } = this.props
+    this.props.house.users.forEach(user => 
+      this.props.fields[user.id] = Object.assign({}, user)
+    )
     return (
-      <div className="charge-form-container">
-        <form>
-          <div className="bill-name">
-            <label className="bill-name-input">Bill Name</label>
-            <div className="bill-name-input"> 
-              <input type="text" ref="billName" />
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <div className={`form-group ${billName.touched && billName.invalid ? 'has-danger': ''}`} >
+          <input placeholder="Type bill name..." type="text" className="form-control" {...billName} />
+          <div className="text-help">
+            {billName.touched ? billName.error : ''}
+          </div>
+        </div>
+        <div className={`form-group ${billTotal.touched && billTotal.invalid ? 'has-danger': ''}`} >
+          <input placeholder="Enter bill total..." type="number" className="form-control" {...billTotal} />
+          <div className="text-help">
+            {billTotal.touched ? billTotal.error : ''}
+          </div>
+        </div>
+        {this.props.house.users.map(user =>
+          <div key={user.id} className={`form-group ${user['id'].touched && user['id'].invalid ? 'has-danger': ''}`} >
+            <label>{user.name}</label>
+            <input placeholder={`Enter bill total for ${user.name}`} type="number" className="form-control" {...user['id']} />
+            <div className="text-help">
+              {user['id'].touched ? user['id'].error : ''}
             </div>
           </div>
-          <div className="charge-form-section">
-            <div className="bill-total">
-              <label>Total</label>
-              <div>
-                <input ref="billName"/>
-              </div>
-            </div>
-            <div className="bill-due-date">
-              <label>Due Date</label>
-              <div>
-                <input ref="billName" type="date"/>
-              </div>
-            </div>
+        )}
+        <div className={`form-group ${billDueDate.touched && billDueDate.invalid ? 'has-danger': ''}`} >
+          <input placeholder="Select bill due date..." type="date" className="form-control" {...billDueDate} />
+          <div className="text-help">
+            {billDueDate.touched ? billDueDate.error : ''}
           </div>
-          <div className="charge-button-container">
-            <button className="charge-form-button btn-info">Split Evenly</button>
-          </div>
-          <div>
-            {this.props.users.map((user, i) => 
-              <UserCustomEntry key={i} user={user} />
-            )}
-          </div>
-          <button className="charge-form-button btn-info">Submit</button>
-        </form>
-      </div>
+        </div>
+        <button type="submit" className="btn btn-primary">Split Evenly</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
+      </form>
     )
   }
 }
@@ -57,37 +70,31 @@ class ChargeForm extends Component {
 const UserCustomEntry = ({
   user
 }) => (
-  <section className="user-custom-entry">
-    <div className="user-custom-name">
-      <label>{user.name}</label>
+  <div className={`form-group ${billTotal.touched && billTotal.invalid ? 'has-danger': ''}`} >
+    <input placeholder="Enter bill total..." type="number" className="form-control" {...billTotal} />
+    <div className="text-help">
+      {billTotal.touched ? billTotal.error : ''}
     </div>
-    <div className="input-group">
-      <div className="input-group-addon">$</div>
-      <input className="form-control custom-input" width="10" type='number'/>
-    </div>
-  </section>
+  </div>
 )
+
+function validate(values) {
+  const errors = {};
+  if (!values.billName) {
+    errors.billName = 'Enter a name';
+  }
+  return errors;
+}
 
 function mapStateToProps (state) {
   return {
-    users: state.house.users
+    house: state.house
   }
 }
 
-export default connect(mapStateToProps)(ChargeForm)
+export default reduxForm({
+  form: 'ChargeForm',
+  fields: ['billName', 'billTotal', 'billDueDate'],
+  validate
+}, mapStateToProps, { createBill, fetchBills })(ChargeForm);
 
-/*
-.charge-form-container {
-  border: 1px solid black;
-  height: 80vh;
-}
-
-.charge-form-section > div {
-  display: inline-block;
-}
-
-.user-custom-entry > div {
-  display: inline-block;
-  width: 15%;
-}
-*/
