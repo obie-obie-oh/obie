@@ -40,10 +40,10 @@ class ChoresNavmenu extends Component {
     return(
       <div className="btn-group flex-navbar" data-toggle="buttons">
         <label className={this.getClasses('list')} onClick={() => this.navigateToRoute('list')}>
-          <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Chores
+          <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />To-do
         </label>
         <label className={this.getClasses('assign')} onClick={() => this.navigateToRoute('assign')}>
-          <input type="radio" name="options" id="option2" autoComplete="off" /> Assign Chore
+          <input type="radio" name="options" id="option2" autoComplete="off" /> Add To-do
         </label>
       </div>
     )
