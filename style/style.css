@@ -12,7 +12,7 @@ body {
 
 /* responsive classes */
 .in-desktop {
-  display: block;
+  display: inline-block;
 }
 .in-mobile {
   display: none;
@@ -23,7 +23,7 @@ body {
     display: none;
   }
   .in-mobile {
-    display: block;
+    display: inline-block;
   }
 }
 
