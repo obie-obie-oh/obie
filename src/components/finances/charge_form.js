@@ -20,49 +20,50 @@ class ChargeForm extends Component {
     this.props.submitBill(fields)
   }
 
+  splitEvenly(e) {
+    e.preventDefault()
+  }
+
   render() {
     return (
-      <div className="charge-form-container">
-        <form onSubmit={this.onSubmit.bind(this)}>
-          <div className="bill-name">
-            <label className="bill-name-input">Bill Name</label>
-            <div className="bill-name-input"> 
-              <input type="text" ref="billName" />
-            </div>
+      <form onSubmit={this.onSubmit.bind(this)}>
+        <div className="form-group col-sm-6" style={{paddingLeft: '0'}}>
+          <label>Bill Name*</label>
+          <input className="form-control" type="text" ref="billName" />
+        </div>
+
+        <div className="form-group col-sm-6" style={{paddingRight: '0'}}>
+          <label>Total*</label>
+          <div className="input-group">
+            <div className="input-group-addon">$</div>
+            <input className="form-control" ref="billTotal"/>
           </div>
-          <div className="charge-form-section">
-            <div className="bill-total">
-              <label>Total</label>
-              <div>
-                <input ref="billTotal"/>
+        </div>
+
+        <div className="form-group">
+          <label>Due Date (Optional)</label>
+          <input className="form-control" ref="billDueDate" type="date"/>
+        </div>
+
+        <button onClick={this.splitEvenly.bind(this)} className="btn btn-primary">Split Evenly</button>
+
+        <hr/>
+
+        <div>
+          {this.props.users.map((user, i) => 
+            <section key={i} className="form-group col-sm-6 col-xl-4">
+              <label>{`${user.name} (Optional)`}</label>
+              <div className="input-group">
+                <div className="input-group-addon">$</div>
+                <input className="form-control" width="10" type='number' ref={user.id}/>
               </div>
-            </div>
-            <div className="bill-due-date">
-              <label>Due Date</label>
-              <div>
-                <input ref="billDueDate" type="date"/>
-              </div>
-            </div>
-          </div>
-          <div className="charge-button-container">
-            <button className="charge-form-button btn-info">Split Evenly</button>
-          </div>
-          <div>
-            {this.props.users.map((user, i) => 
-              <section key={i} className="user-custom-entry">
-                <div className="user-custom-name">
-                  <label>{user.name}</label>
-                </div>
-                <div className="input-group">
-                  <div className="input-group-addon">$</div>
-                  <input className="form-control custom-input" width="10" type='number' ref={user.id}/>
-                </div>
-              </section>
-            )}
-          </div>
-          <button onClick={this.onSubmit.bind(this)} type="submit" className="charge-form-button btn-info">Submit</button>
-        </form>
-      </div>
+            </section>
+          )}
+        </div>
+
+        <hr className="col-xs-12" />
+        <button onClick={this.onSubmit.bind(this)} type="submit" className="btn btn-primary">Submit</button>
+      </form>
     )
   }
 }
