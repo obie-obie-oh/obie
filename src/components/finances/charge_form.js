@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { submitBill } from '../../actions'
+import _ from 'lodash'
 
 class ChargeForm extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      billTotal: ''
+    }
   }
 
   onSubmit(e) {
@@ -22,6 +27,15 @@ class ChargeForm extends Component {
 
   splitEvenly(e) {
     e.preventDefault()
+    const fields = this.refs
+    const numberOfUsers = this.props.users.length
+    const splitTotal = (+this.state.billTotal / numberOfUsers).toFixed(2)
+
+    _.each(fields, (field, fieldName) => {
+      if (fieldName !== 'billName' && fieldName !== 'billTotal' && fieldName !== 'billDueDate') {
+        field.value = splitTotal
+      }
+    })
   }
 
   render() {
@@ -36,7 +50,7 @@ class ChargeForm extends Component {
           <label>Total*</label>
           <div className="input-group">
             <div className="input-group-addon">$</div>
-            <input className="form-control" ref="billTotal"/>
+            <input className="form-control" type="number" ref="billTotal" onChange={(e) => this.setState({ billTotal: e.target.value })} />
           </div>
         </div>
 
@@ -45,7 +59,7 @@ class ChargeForm extends Component {
           <input className="form-control" ref="billDueDate" type="date"/>
         </div>
 
-        <button onClick={this.splitEvenly.bind(this)} className="btn btn-primary">Split Evenly</button>
+        <button disabled={!this.state.billTotal} onClick={this.splitEvenly.bind(this)} className="btn btn-primary">Split Between Household</button>
 
         <hr/>
 
