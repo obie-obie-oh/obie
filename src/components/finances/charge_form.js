@@ -53,12 +53,13 @@ class ChargeForm extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
-        <div className="form-group col-sm-6" style={{paddingLeft: '0'}}>
+        <h5 className="text-center">Bill Info</h5>
+        <div className="form-group col-sm-6 no-padding-xs no-padding-left">
           <label>Bill Name*</label>
           <input className="form-control" type="text" ref="billName" />
         </div>
 
-        <div className="form-group col-sm-6" style={{paddingRight: '0'}}>
+        <div className="form-group col-sm-6 no-padding-xs no-padding-right">
           <label>Total*</label>
           <div className="input-group">
             <div className="input-group-addon">$</div>
@@ -71,14 +72,15 @@ class ChargeForm extends Component {
           <input className="form-control" ref="billDueDate" type="date"/>
         </div>
 
-        <button disabled={!this.state.billTotal} onClick={this.splitEvenly.bind(this)} className="btn btn-primary">Split Between Household</button>
+        <button disabled={!this.state.billTotal} onClick={this.splitEvenly.bind(this)} className="btn btn-primary full-width-xs">Split Between Household</button>
 
         <hr/>
 
         <div>
+          <h5 className="text-center">Household</h5>
           {this.props.users.map((user, i) => 
-            <section key={i} className="form-group col-sm-6 col-xl-4">
-              <label>{`${user.name} (Optional)`}</label>
+            <section key={i} className="form-group col-sm-6 col-xl-4 no-padding-xs">
+              <label>{user.name}</label>
               <div className="input-group">
                 <div className="input-group-addon">$</div>
                 <input className="form-control" width="10" type='number' ref={user.id}/>
@@ -88,7 +90,10 @@ class ChargeForm extends Component {
         </div>
 
         <hr className="col-xs-12" />
-        <button onClick={this.onSubmit.bind(this)} type="submit" className="btn btn-primary">Submit</button>
+        <section className="col-xs-12 no-padding-xs">
+          <p>*Charge at least one member</p>
+          <button onClick={this.onSubmit.bind(this)} type="submit" className="btn btn-primary full-width-xs">Submit</button>
+        </section>
       </form>
     )
   }

@@ -1,0 +1,38 @@
+
+/* responsive classes */
+.in-desktop {
+  display: inline-block;
+}
+.in-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .in-desktop {
+    display: none;
+  }
+  .in-mobile {
+    display: inline-block;
+  }
+}
+
+/* end responsive classes */
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.no-padding-right {
+  padding-right: 0;
+}
+
+@media (max-width: 543px) {
+  .no-padding-xs {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .full-width-xs {
+    width: 100%;
+  }
+}
