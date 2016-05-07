@@ -28,11 +28,8 @@ class MessageForm extends Component {
     } = this.props
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div className={`form-group ${text.touched && text.invalid ? 'has-danger': ''}`} >
+        <div className="form-group" >
           <input placeholder="Type text..." type="text" className="form-control" {...text} />
-          <div className="text-help">
-            {text.touched ? text.error : ''}
-          </div>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
@@ -40,16 +37,7 @@ class MessageForm extends Component {
   }
 }
 
-function validate(values) {
-  const errors = {};
-  if (!values.text) {
-    errors.text = 'Enter a Message';
-  }
-  return errors;
-}
-
 export default reduxForm({
   form: 'MessageForm',
-  fields: ['text'],
-  validate
+  fields: ['text']
 }, null, { submitRoommateMessage, submitLandlordMessage, fetchMessages, fetchLandlordMessages })(MessageForm);

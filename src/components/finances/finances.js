@@ -7,7 +7,7 @@ import FinanceNavmenu from './finance_navmenu'
 class Finances extends Component {
   render() {
     return (
-      <article className="finances col-sm-9">
+      <article className="finances col-md-9">
         <FinanceNavmenu />
         {this.props.children}
       </article>
