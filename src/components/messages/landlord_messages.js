@@ -15,14 +15,14 @@ class LandlordMessages extends Component {
 
   render() {
     return (
-      <article className="messages content-container col-md-9">
+      <section>
         <MessageForm landlord={true} />
         <section className="message-list">
           {this.props.messages.map((message, i) => 
             <MessageEntry key={i} message={message} />
           )}
         </section>
-      </article>
+      </section>
     )
   }
 }
