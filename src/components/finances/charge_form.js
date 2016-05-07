@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { submitBill } from '../../actions'
 
 class ChargeForm extends Component {
   constructor(props) {
     super(props)
   }
 
-  // componentWillMount() {
-
-  // }
+  onSubmit(e) {
+    e.preventDefault();
+    const fields = {}
+    for(let key in this.refs) {
+      if(key === 'billName' || key === 'billTotal' || key === 'billDueDate') {
+        fields[key] = this.refs[key].value
+      } else if (key !== undefined && this.refs[key].value > 0) {
+        fields[key] = this.refs[key].value
+      }
+    }
+    this.props.submitBill(fields)
+  }
 
   render() {
-    //billname
-    //total       due date
-    //split button    custom button
-                      //user list
-                      //submit
     return (
       <div className="charge-form-container">
-        <form>
+        <form onSubmit={this.onSubmit.bind(this)}>
           <div className="bill-name">
             <label className="bill-name-input">Bill Name</label>
             <div className="bill-name-input"> 
@@ -29,13 +34,13 @@ class ChargeForm extends Component {
             <div className="bill-total">
               <label>Total</label>
               <div>
-                <input ref="billName"/>
+                <input ref="billTotal"/>
               </div>
             </div>
             <div className="bill-due-date">
               <label>Due Date</label>
               <div>
-                <input ref="billName" type="date"/>
+                <input ref="billDueDate" type="date"/>
               </div>
             </div>
           </div>
@@ -44,29 +49,23 @@ class ChargeForm extends Component {
           </div>
           <div>
             {this.props.users.map((user, i) => 
-              <UserCustomEntry key={i} user={user} />
+              <section key={i} className="user-custom-entry">
+                <div className="user-custom-name">
+                  <label>{user.name}</label>
+                </div>
+                <div className="input-group">
+                  <div className="input-group-addon">$</div>
+                  <input className="form-control custom-input" width="10" type='number' ref={user.id}/>
+                </div>
+              </section>
             )}
           </div>
-          <button className="charge-form-button btn-info">Submit</button>
+          <button onClick={this.onSubmit.bind(this)} type="submit" className="charge-form-button btn-info">Submit</button>
         </form>
       </div>
     )
   }
 }
-
-const UserCustomEntry = ({
-  user
-}) => (
-  <section className="user-custom-entry">
-    <div className="user-custom-name">
-      <label>{user.name}</label>
-    </div>
-    <div className="input-group">
-      <div className="input-group-addon">$</div>
-      <input className="form-control custom-input" width="10" type='number'/>
-    </div>
-  </section>
-)
 
 function mapStateToProps (state) {
   return {
@@ -74,18 +73,4 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps)(ChargeForm)
-
-/*
-.charge-form-container {
-  border: 1px solid black;
-  height: 80vh;
-}
-.charge-form-section > div {
-  display: inline-block;
-}
-.user-custom-entry > div {
-  display: inline-block;
-  width: 15%;
-}
-*/
+export default connect(mapStateToProps, { submitBill })(ChargeForm)
