@@ -10,24 +10,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* responsive classes */
-.in-desktop {
-  display: inline-block;
-}
-.in-mobile {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .in-desktop {
-    display: none;
-  }
-  .in-mobile {
-    display: inline-block;
-  }
-}
-
-/* end responsive classes */
 .navbar {
   padding: 0.3rem 5rem;
   height: 46px;
@@ -82,4 +64,8 @@ body {
 .sidebar-user-name {
   display: inline-block;
   margin-left: 10%
+}
+
+.text-center {
+  text-align: center;
 }
