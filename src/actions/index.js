@@ -138,7 +138,8 @@ export function submitRoommateMessage(props) {
 }
 
 
-export function createBill(props) {
+export function submitBill(props) {
+  console.log('IN FRONT END', props)
   const request = axios.post(`${NEW_API}/api/bills`, {
     headers: {
       token: localStorage.getItem('obie')
@@ -147,7 +148,7 @@ export function createBill(props) {
   })
   
   return {
-    type: actions.CREATE_BILL,
+    type: actions.SUBMIT_BILL,
     payload: request
   }
 }

@@ -1,100 +1,76 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { reduxForm } from 'redux-form'
-import { createBill, fetchBills } from '../../actions'
-//export const fields = [ 'users', 'billName', 'billTotal', 'billDueDate' ]
-//TODO: import necessary
-
+import { submitBill } from '../../actions'
 
 class ChargeForm extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props)
+  }
 
-  onSubmit(props) {
-    //TODO: change from createMessage to whatever action
-    this.props.createBill(props)
-      .then(() => {
-        //TODO: change to equiv of fetchMessages
-        this.props.fetchBills()
-        this.props.resetForm()
-      })
+  onSubmit(e) {
+    e.preventDefault();
+    const fields = {}
+    for(let key in this.refs) {
+      if(key === 'billName' || key === 'billTotal' || key === 'billDueDate') {
+        fields[key] = this.refs[key].value
+      } else if (key !== undefined && this.refs[key].value > 0) {
+        fields[key] = this.refs[key].value
+      }
+    }
+    this.props.submitBill(fields)
   }
 
   render() {
-    const {
-      fields: { billName, billTotal, billDueDate },
-      handleSubmit,
-      resetForm,
-      submitting
-    } = this.props
-    this.props.house.users.forEach(user => 
-      this.props.fields[user.id] = Object.assign({}, user)
-    )
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div className={`form-group ${billName.touched && billName.invalid ? 'has-danger': ''}`} >
-          <input placeholder="Type bill name..." type="text" className="form-control" {...billName} />
-          <div className="text-help">
-            {billName.touched ? billName.error : ''}
-          </div>
-        </div>
-        <div className={`form-group ${billTotal.touched && billTotal.invalid ? 'has-danger': ''}`} >
-          <input placeholder="Enter bill total..." type="number" className="form-control" {...billTotal} />
-          <div className="text-help">
-            {billTotal.touched ? billTotal.error : ''}
-          </div>
-        </div>
-        {this.props.house.users.map(user =>
-          <div key={user.id} className={`form-group ${user['id'].touched && user['id'].invalid ? 'has-danger': ''}`} >
-            <label>{user.name}</label>
-            <input placeholder={`Enter bill total for ${user.name}`} type="number" className="form-control" {...user['id']} />
-            <div className="text-help">
-              {user['id'].touched ? user['id'].error : ''}
+      <div className="charge-form-container">
+        <form onSubmit={this.onSubmit.bind(this)}>
+          <div className="bill-name">
+            <label className="bill-name-input">Bill Name</label>
+            <div className="bill-name-input"> 
+              <input type="text" ref="billName" />
             </div>
           </div>
-        )}
-        <div className={`form-group ${billDueDate.touched && billDueDate.invalid ? 'has-danger': ''}`} >
-          <input placeholder="Select bill due date..." type="date" className="form-control" {...billDueDate} />
-          <div className="text-help">
-            {billDueDate.touched ? billDueDate.error : ''}
+          <div className="charge-form-section">
+            <div className="bill-total">
+              <label>Total</label>
+              <div>
+                <input ref="billTotal"/>
+              </div>
+            </div>
+            <div className="bill-due-date">
+              <label>Due Date</label>
+              <div>
+                <input ref="billDueDate" type="date"/>
+              </div>
+            </div>
           </div>
-        </div>
-        <button type="submit" className="btn btn-primary">Split Evenly</button>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+          <div className="charge-button-container">
+            <button className="charge-form-button btn-info">Split Evenly</button>
+          </div>
+          <div>
+            {this.props.users.map((user, i) => 
+              <section key={i} className="user-custom-entry">
+                <div className="user-custom-name">
+                  <label>{user.name}</label>
+                </div>
+                <div className="input-group">
+                  <div className="input-group-addon">$</div>
+                  <input className="form-control custom-input" width="10" type='number' ref={user.id}/>
+                </div>
+              </section>
+            )}
+          </div>
+          <button onClick={this.onSubmit.bind(this)} type="submit" className="charge-form-button btn-info">Submit</button>
+        </form>
+      </div>
     )
   }
-}
-
-const UserCustomEntry = ({
-  user
-}) => (
-  <div className={`form-group ${billTotal.touched && billTotal.invalid ? 'has-danger': ''}`} >
-    <input placeholder="Enter bill total..." type="number" className="form-control" {...billTotal} />
-    <div className="text-help">
-      {billTotal.touched ? billTotal.error : ''}
-    </div>
-  </div>
-)
-
-function validate(values) {
-  const errors = {};
-  if (!values.billName) {
-    errors.billName = 'Enter a name';
-  }
-  return errors;
 }
 
 function mapStateToProps (state) {
   return {
-    house: state.house
+    users: state.house.users
   }
 }
 
-export default reduxForm({
-  form: 'ChargeForm',
-  fields: ['billName', 'billTotal', 'billDueDate'],
-  validate
-}, mapStateToProps, { createBill, fetchBills })(ChargeForm);
-
+export default connect(mapStateToProps, { submitBill })(ChargeForm)
