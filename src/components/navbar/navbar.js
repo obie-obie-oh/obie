@@ -5,9 +5,10 @@ import { Link } from 'react-router'
 
 class Navbar extends Component {
   toggleSideMenu(e) {
+    e.preventDefault()
     const burger = document.querySelector('.bm-burger-button > button')
     if (burger) {
-      burger.click();
+      burger.click()
     }
   }
 
