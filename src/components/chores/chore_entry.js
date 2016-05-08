@@ -5,19 +5,16 @@ const ChoreEntry = ({
   chore
 }) => (
   <section className="chore-entry col-sm-12">
-    <div className="col-xs-6">
+    <div className="col-xs-8">
       <div>
         <div className="caption">
           <h4 className="chore-name">{chore.chorename}</h4> 
-          <p>{chore.name} <span> {chore.dueDate} </span> </p>
+          <p>{chore.name} <span> {chore.dueDate} </span> {chore.details} </p>
         </div>
       </div>
     </div>
-    <div className="col-xs-2">
-      <img className="chore-image" src={choreIcons[chore.category]}></img>
-    </div>
-    <div className="col-sm-4">
-      Button Placeholder
+    <div className="col-xs-4">
+      <button className="btn btn-success-outline pull-right"><i className="fa fa-check" aria-hidden="true"></i></button>
     </div>
   </section>
 )

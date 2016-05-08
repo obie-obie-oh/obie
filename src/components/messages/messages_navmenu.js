@@ -39,10 +39,10 @@ class MessagesNavmenu extends Component {
   render() {
     return (
       <div className="btn-group flex-navbar" data-toggle="buttons">
-        <label className={this.getClasses('roommates')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('roommates')}>
+        <label className={this.getClasses('roommates')} style={{zIndex: 0}} onClick={() => this.navigateToRoute('roommates')}>
           <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Roommates
         </label>
-        <label className={this.getClasses('landlord')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('landlord')}>
+        <label className={this.getClasses('landlord')} style={{zIndex: 0}} onClick={() => this.navigateToRoute('landlord')}>
           <input type="radio" name="options" id="option2" autoComplete="off" /> Include Landlord
         </label>
       </div>
