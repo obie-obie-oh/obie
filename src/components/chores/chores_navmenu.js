@@ -25,7 +25,7 @@ class ChoresNavmenu extends Component {
 
   navigateToRoute(route) {
     this.setState({ currentView: route})
-    browserHistory.push(`/house/chores/${route}`)
+    browserHistory.push(`/house/todos/${route}`)
   }
 
   getClasses(link) {
@@ -42,7 +42,7 @@ class ChoresNavmenu extends Component {
         <label className={this.getClasses('list')} onClick={() => this.navigateToRoute('list')}>
           <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />To-do
         </label>
-        <label className={this.getClasses('assign')} onClick={() => this.navigateToRoute('assign')}>
+        <label className={this.getClasses('add')} onClick={() => this.navigateToRoute('add')}>
           <input type="radio" name="options" id="option2" autoComplete="off" /> Add To-do
         </label>
       </div>

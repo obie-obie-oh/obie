@@ -14,7 +14,9 @@ class ChoresAssign extends Component {
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 
-        <div className={`form-group ${task.touched && task.invalid ? 'has-danger': ''}`} >
+        <h5 className="text-center">Add a Todo</h5>
+
+        <div className={`form-group col-lg-6 col-xl-4 no-padding-xs ${task.touched && task.invalid ? 'has-danger': ''}`} >
           <label>Task</label>
           <input type="text" className="form-control" {...task} />
           <div className="text-help">
@@ -22,17 +24,17 @@ class ChoresAssign extends Component {
           </div>
         </div>
         
-        <div className="form-group" >
+        <div className="form-group col-lg-6 col-xl-4 no-padding-xs" >
           <label>More Details? (Optional)</label>
           <input type="text" className="form-control" {...details} />
         </div>
 
-        <div className="form-group" >
+        <div className="form-group col-xs-12 col-xl-4 no-padding-xs" >
           <label>Complete By (Optional)</label>
           <input type="date" className="form-control" {...dueDate} />
         </div>
 
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary full-width-xs">Submit</button>
       </form>
     );
   }
