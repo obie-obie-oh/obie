@@ -24,10 +24,10 @@ export default (
         <Route path="roommates" component={RoommateMessages} />
         <Route path="landlord" component={LandlordMessages} />
       </Route>
-      <Route path='chores' component={Chores} >
+      <Route path='todos' component={Chores} >
         <IndexRedirect to="list" />
         <Route path='list' component={ChoresList} />
-        <Route path='assign' component={ChoresAssign} />
+        <Route path='add' component={ChoresAssign} />
       </Route>
       <Route path='finances' component={Finances}>
         <IndexRedirect to='payments' />
@@ -39,11 +39,6 @@ export default (
     <Route path='landlord' component={House}>
       <IndexRedirect to='messages' />
       <Route path='messages' component={Messages} />
-      <Route path='chores' component={Chores} >
-        <IndexRedirect to="list" />
-        <Route path='list' component={ChoresList} />
-        <Route path='assign' component={ChoresAssign} />
-      </Route>
       <Route path='finances' component={Finances}>
         <IndexRedirect to='payments' />
         <Route path='bills' component={Bills} />
