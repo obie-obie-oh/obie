@@ -26,6 +26,10 @@
   padding-right: 0;
 }
 
+.full-width {
+  width: 100%;
+}
+
 @media (max-width: 543px) {
   .no-padding-xs {
     padding-left: 0;

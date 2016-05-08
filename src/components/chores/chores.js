@@ -6,7 +6,7 @@ import ChoresNavmenu from './chores_navmenu'
 class Chores extends Component {
   render() {
     return (
-      <article className="chores col-sm-9">
+      <article className="chores col-md-9">
         <ChoresNavmenu />
         {this.props.children}
       </article>

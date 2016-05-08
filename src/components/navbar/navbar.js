@@ -5,41 +5,45 @@ import { Link } from 'react-router'
 
 class Navbar extends Component {
   toggleSideMenu(e) {
+    e.preventDefault()
     const burger = document.querySelector('.bm-burger-button > button')
     if (burger) {
-      burger.click();
+      burger.click()
     }
   }
 
   render() {
     return (
       <nav className="navbar navbar-full navbar-dark bg-primary">
-        <div className="in-desktop">
+        <div className="in-desktop full-width col-xl-10 col-xl-offset-1">
           <Link className="navbar-brand" to="/">Obie</Link>
           <ul className="nav navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/house/messages">Messages</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/house/finances">Finances</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/house/chores">Chores</Link>
-            </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/dashboard">Dashboard</Link>
             </li>
+            
+            <li className="nav-item">
+              <Link className="nav-link" to="/house/messages">Messages</Link>
+            </li>
 
+            <li className="nav-item">
+              <Link className="nav-link" to="/house/finances">Finances</Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/house/todos">Todo</Link>
+            </li>
+            
+            <li className="nav-item">
+              <Link className="nav-link" to="/landlord/finances">LLFinances</Link>
+            </li>
 
             <li className="nav-item">
               <Link className="nav-link" to="/landlord/messages">LLMessages</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/landlord/finances">LLFinances</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/landlord/chores">LLChores</Link>
-            </li>
+
+
           </ul>
         </div>
         <div className="in-mobile">

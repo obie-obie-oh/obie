@@ -9,7 +9,7 @@ export default class App extends Component {
       <div>
         <Navbar />
         <BurgerMenu />
-        <div style={{marginTop: '30px'}}>
+        <div style={{marginTop: '30px'}} className="col-xl-10 col-xl-offset-1">
           {this.props.children}
         </div>
       </div>

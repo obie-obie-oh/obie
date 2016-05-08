@@ -10,6 +10,17 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.burger-menu-item {
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  color: white;
+}
+
+.burger-menu-item:hover {
+  color: #728FA7;
+  text-decoration: none;
+}
+
 .navbar {
   padding: 0.3rem 5rem;
   height: 46px;
