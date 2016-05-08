@@ -63,7 +63,7 @@ class ChargeForm extends Component {
           <label>Total*</label>
           <div className="input-group">
             <div className="input-group-addon">$</div>
-            <input className="form-control" type="number" ref="billTotal" onChange={(e) => this.setState({ billTotal: e.target.value })} />
+            <input className="form-control" style={{zIndex: 0}} type="number" ref="billTotal" onChange={(e) => this.setState({ billTotal: e.target.value })} />
           </div>
         </div>
 
@@ -79,7 +79,7 @@ class ChargeForm extends Component {
         <div>
           <h5 className="text-center">Household</h5>
           {this.props.users.map((user, i) => 
-            <section key={i} className="form-group col-sm-6 col-xl-4 no-padding-xs">
+            <section key={i} className="form-group col-sm-6 col-xl-4 no-padding-xs reset-z-index">
               <label>{user.name}</label>
               <div className="input-group">
                 <div className="input-group-addon">$</div>

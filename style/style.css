@@ -80,3 +80,7 @@ body {
 .text-center {
   text-align: center;
 }
+
+.navbar-full {
+  z-index: 1;
+}
