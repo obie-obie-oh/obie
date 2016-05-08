@@ -23,20 +23,20 @@ class ChoresAssign extends Component {
 
         <h5 className="text-center">Add a Todo</h5>
 
-        <div className={`form-group col-lg-6 col-xl-4 no-padding-xs ${task.touched && task.invalid ? 'has-danger': ''}`} >
+        <div className={`form-group ${task.touched && task.invalid ? 'has-danger': ''}`} >
           <label>Task</label>
-          <input type="text" className="form-control" {...task} />
+          <input type="text" className="form-control" {...task} placeholder="Take Out Trash" />
           <div className="text-help">
             {task.touched ? task.error : ''}
           </div>
         </div>
         
-        <div className="form-group col-lg-6 col-xl-4 no-padding-xs" >
+        <div className="form-group" >
           <label>More Details? (Optional)</label>
-          <input type="text" className="form-control" {...details} />
+          <textarea className="form-control" {...details} placeholder="pick up is thursday morning" />
         </div>
 
-        <div className="form-group col-xs-12 col-xl-4 no-padding-xs" >
+        <div className="form-group" >
           <label>Complete By (Optional)</label>
           <input type="date" className="form-control" {...dueDate} />
         </div>

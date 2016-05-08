@@ -14,7 +14,7 @@ const ChoreEntry = ({
       </div>
     </div>
     <div className="col-xs-4">
-      <button className="btn btn-secondary">Complete</button>
+      <button className="btn btn-success-outline pull-right"><i className="fa fa-check" aria-hidden="true"></i></button>
     </div>
   </section>
 )
