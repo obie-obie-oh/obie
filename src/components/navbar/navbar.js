@@ -15,7 +15,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-full navbar-dark bg-primary">
-        <div className="in-desktop full-width">
+        <div className="in-desktop full-width col-xl-10 col-xl-offset-1">
           <Link className="navbar-brand" to="/">Obie</Link>
           <ul className="nav navbar-nav">
 
