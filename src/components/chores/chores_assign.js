@@ -6,10 +6,17 @@ import { createChore } from '../../actions'
 class ChoresAssign extends Component {
   onSubmit(props) {
     this.props.createChore(props)
+      .then(() => {
+        this.props.resetForm()
+      })
   }
 
   render() {
-    const  {fields: {userId, task, details, dueDate}, handleSubmit} = this.props;
+    const  {fields: {userId, task, details, dueDate}, 
+      handleSubmit, 
+      resetForm,
+      submitting,
+    } = this.props;
     
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
