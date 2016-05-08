@@ -39,10 +39,10 @@ class ChoresNavmenu extends Component {
   render() {
     return(
       <div className="btn-group flex-navbar" data-toggle="buttons">
-        <label className={this.getClasses('list')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('list')}>
+        <label className={this.getClasses('list')} style={{zIndex: 0}} onClick={() => this.navigateToRoute('list')}>
           <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />To-do
         </label>
-        <label className={this.getClasses('add')} style={{zIndex: 1}} onClick={() => this.navigateToRoute('add')}>
+        <label className={this.getClasses('add')} style={{zIndex: 0}} onClick={() => this.navigateToRoute('add')}>
           <input type="radio" name="options" id="option2" autoComplete="off" /> Add To-do
         </label>
       </div>
