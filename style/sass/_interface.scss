@@ -1,0 +1,100 @@
+
+
+.burger-menu-item {
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  color: white;
+}
+
+.burger-menu-item:hover {
+  color: #728FA7;
+  text-decoration: none;
+}
+
+.navbar {
+  padding: 0.3rem 5rem;
+  height: 46px;
+}
+
+.mobile-container {
+  margin-top: 60px;
+}
+
+.flex-navbar {
+  display: flex;
+}
+
+.flex-button {
+  flex-grow: 1;
+}
+
+.active {
+  z-index: 1;
+}
+
+.burger-menu > li {
+  list-style: none;
+}
+
+.navmenu > li {
+  list-style: none;
+  display: inline-block;
+}
+
+.custom-split {
+  width: 20%;
+}
+
+.charge-form-button {
+  border-radius: 5px;
+}
+
+.sidebar-user-container {
+  width: 100%;
+}
+
+.sidebar-user {
+  margin: 5% 0%;
+}
+
+.sidebar-user-image {
+  width: 15%;
+  height: 15%;
+}
+
+.sidebar-user-name {
+  display: inline-block;
+  margin-left: 10%
+}
+
+.text-center {
+  text-align: center;
+}
+
+.navbar-full {
+  z-index: 1;
+}
+
+.list-entry {
+  display: flex;
+  width: 100%;
+  padding: 10px 5px 10px 10px;
+  margin-bottom: 7px;
+  background-color: rgba(138, 138, 138, 0.1);
+  border-radius: 10px;
+}
+
+.list-entry:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.flex-end-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.message-form {
+  margin-bottom: 15px;
+}
