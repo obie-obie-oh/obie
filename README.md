@@ -1,5 +1,5 @@
 # obie
-The dopest tenant/landlord app of all time.
+Tenant / landlord web app.
 
 # How to run
 1. npm install
