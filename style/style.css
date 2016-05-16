@@ -93,9 +93,11 @@ body {
   background-color: rgba(138, 138, 138, 0.1);
   border-radius: 10px;
 }
+
 .list-entry:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 .flex-end-button {
   display: flex;
   flex-direction: column;

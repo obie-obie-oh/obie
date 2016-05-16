@@ -31,7 +31,7 @@ class MessageForm extends Component {
         <div className="form-group" >
           <input placeholder="Type text..." type="text" className="form-control" {...text} />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary full-width-xs">Submit</button>
       </form>
     )
   }
