@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Navmenu from './navmenu'
 import { Link } from 'react-router'
+import links from './links'
+import _ from 'lodash'
 
 class Navbar extends Component {
   toggleSideMenu(e) {
@@ -18,32 +19,12 @@ class Navbar extends Component {
         <div className="in-desktop full-width col-xl-10 col-xl-offset-1">
           <Link className="navbar-brand" to="/">Obie</Link>
           <ul className="nav navbar-nav">
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/dashboard">Dashboard</Link>
-            </li>
-            
-            <li className="nav-item">
-              <Link className="nav-link" to="/house/messages">Messages</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/house/finances">Finances</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/house/todos">Todo</Link>
-            </li>
-            
-            <li className="nav-item">
-              <Link className="nav-link" to="/landlord/finances">LLFinances</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/landlord/messages">LLMessages</Link>
-            </li>
-
-
+            {_.map(links, (link, name) => (
+                <li className="nav-item" key={name}>
+                  <Link className="nav-link" to={link.to}>{name}</Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
         <div className="in-mobile">

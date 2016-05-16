@@ -84,3 +84,27 @@ body {
 .navbar-full {
   z-index: 1;
 }
+
+.list-entry {
+  display: flex;
+  width: 100%;
+  padding: 10px 5px 10px 10px;
+  margin-bottom: 7px;
+  background-color: rgba(138, 138, 138, 0.1);
+  border-radius: 10px;
+}
+
+.list-entry:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.flex-end-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.message-form {
+  margin-bottom: 15px;
+}
