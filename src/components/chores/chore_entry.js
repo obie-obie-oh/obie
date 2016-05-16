@@ -7,7 +7,6 @@ const ChoreEntry = ({
 }) => (
   <section className="chore-entry list-entry col-sm-12">
     <div className="col-xs-8">
-      {console.log(chore)}
       <div>
         <div className="caption">
           <h4 className="chore-name">{chore.chorename}</h4> 
