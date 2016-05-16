@@ -85,15 +85,15 @@ body {
   z-index: 1;
 }
 
-.chore-entry {
+.list-entry {
   display: flex;
   width: 100%;
-  padding: 10px 5px 5px 5px;
+  padding: 10px 5px 5px 10px;
   margin-bottom: 7px;
   background-color: rgba(138, 138, 138, 0.1);
   border-radius: 10px;
 }
-.chore-entry:hover {
+.list-entry:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .flex-end-button {
