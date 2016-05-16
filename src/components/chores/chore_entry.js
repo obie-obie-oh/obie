@@ -13,7 +13,7 @@ const ChoreEntry = ({
         </div>
       </div>
     </div>
-    <div className="col-xs-4">
+    <div className="col-xs-4 flex-end-button">
       <button className="btn btn-success-outline pull-right"><i className="fa fa-check" aria-hidden="true"></i></button>
     </div>
   </section>

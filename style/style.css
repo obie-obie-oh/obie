@@ -84,3 +84,21 @@ body {
 .navbar-full {
   z-index: 1;
 }
+
+.chore-entry {
+  display: flex;
+  width: 100%;
+  padding: 10px 5px 5px 5px;
+  margin-bottom: 7px;
+  background-color: rgba(138, 138, 138, 0.1);
+  border-radius: 10px;
+}
+.chore-entry:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.flex-end-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
