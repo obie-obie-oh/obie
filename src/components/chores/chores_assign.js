@@ -12,7 +12,7 @@ class ChoresAssign extends Component {
   }
 
   render() {
-    const  {fields: {userId, task, details, dueDate}, 
+    const {fields: {userId, task, details, dueDate}, 
       handleSubmit, 
       resetForm,
       submitting,
@@ -25,7 +25,7 @@ class ChoresAssign extends Component {
 
         <div className={`form-group ${task.touched && task.invalid ? 'has-danger': ''}`} >
           <label>Task</label>
-          <input type="text" className="form-control" {...task} placeholder="Take Out Trash" />
+          <input type="text" className="form-control" {...task} placeholder="Take Out Trash" maxLength={30} />
           <div className="text-help">
             {task.touched ? task.error : ''}
           </div>
@@ -33,7 +33,7 @@ class ChoresAssign extends Component {
         
         <div className="form-group" >
           <label>More Details? (Optional)</label>
-          <textarea className="form-control" {...details} placeholder="pick up is thursday morning" />
+          <textarea className="form-control" {...details} placeholder="pick up is thursday morning" value={details.value || ''} />
         </div>
 
         <div className="form-group" >
