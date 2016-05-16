@@ -27,7 +27,7 @@ class MessageForm extends Component {
       submitting
     } = this.props
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="message-form">
         <div className="form-group" >
           <input placeholder="Type text..." type="text" className="form-control" {...text} />
         </div>
