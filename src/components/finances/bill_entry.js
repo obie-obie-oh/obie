@@ -4,8 +4,7 @@ import h from '../../helpers'
 const BillEntry = ({
   bill
 }) => (
-  <section className="bill-entry col-sm-12">
-    <div className="row">
+  <section className="bill-entry list-entry col-sm-12">
       <div className="col-xs-8">
         <p>
           <span className="glyphicon glyphicon-unchecked"></span>
@@ -22,13 +21,12 @@ const BillEntry = ({
           </span>
         </p>
         <p>
-          by { h.getPaymentDate(bill.due_date) }
+          by {h.getPaymentDate(bill.due_date)}
         </p>
       </div>
-      <div className="col-xs-4">
+      <div className="col-xs-4 flex-end-button">
         <button className="pay-button btn btn-default">Pay</button>
       </div>
-    </div>
   </section>
 )
 

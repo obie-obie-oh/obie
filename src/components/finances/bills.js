@@ -12,7 +12,7 @@ class Bills extends Component {
   render() {
     return (
       <div className="bill-list">
-        <p>Bills:</p>
+        <h5 className="text-center">Pending Bills</h5>
         {this.props.bills.map(bill => 
           <BillEntry bill={bill} key={bill.billId} />
         )}
@@ -22,6 +22,7 @@ class Bills extends Component {
 }
 
 function mapStateToProps (state) {
+  console.log('global state', state)
   return {
     bills: state.finances.bills
   }

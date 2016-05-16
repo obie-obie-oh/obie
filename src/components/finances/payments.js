@@ -11,7 +11,7 @@ class Payments extends Component {
   render() {
     return (
       <div className="payment-list">
-        <p>Payments:</p>
+        <h5 className="text-center">Pending Payments</h5>
         {this.props.payments.map(payment => 
           <PaymentEntry payment={payment} key={payment.paymentID} />
         )}

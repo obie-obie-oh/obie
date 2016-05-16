@@ -4,7 +4,7 @@ import choreIcons from '../../assets/chore_icons'
 const ChoreEntry = ({
   chore
 }) => (
-  <section className="chore-entry col-sm-12">
+  <section className="chore-entry list-entry col-sm-12">
     <div className="col-xs-8">
       <div>
         <div className="caption">
