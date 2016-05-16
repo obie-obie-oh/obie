@@ -34,15 +34,6 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link className="nav-link" to="/house/todos">Todo</Link>
             </li>
-            
-            <li className="nav-item">
-              <Link className="nav-link" to="/landlord/finances">LLFinances</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link" to="/landlord/messages">LLMessages</Link>
-            </li>
-
 
           </ul>
         </div>

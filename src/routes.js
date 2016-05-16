@@ -36,16 +36,6 @@ export default (
         <Route path='charge' component={ChargeForm} />
       </Route>
     </Route>
-    <Route path='landlord' component={House}>
-      <IndexRedirect to='messages' />
-      <Route path='messages' component={Messages} />
-      <Route path='finances' component={Finances}>
-        <IndexRedirect to='payments' />
-        <Route path='bills' component={Bills} />
-        <Route path='payments' component={Payments} />
-        <Route path='charge' component={ChargeForm} />
-      </Route>
-    </Route>
     <Route path='dashboard' component={Dashboard}>
 
     </Route>
