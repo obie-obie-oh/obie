@@ -7,6 +7,7 @@ import {reducer as formReducer} from 'redux-form';
 import routes from './routes'
 import reducers from './reducers'
 import promise from 'redux-promise'
+import style from '../style/sass/style.scss'
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
