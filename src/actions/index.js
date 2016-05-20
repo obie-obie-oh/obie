@@ -136,7 +136,6 @@ export function submitRoommateMessage(props) {
 
 
 export function submitBill(props) {
-  console.log('IN FRONT END', props)
   const request = axios.post(`${API_ROOT_URL}/api/bills`, {
     headers: {
       token: localStorage.getItem('obie')
@@ -163,3 +162,6 @@ export function submitLandlordMessage(props) {
     payload: request
   }
 }
+
+
+
