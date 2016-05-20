@@ -13,27 +13,18 @@ class ChargeForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const fields = {}
+    const fields = { users: [] }
     for(let key in this.refs) {
       if(key === 'billName' || key === 'billTotal' || key === 'billDueDate') {
         fields[key] = this.refs[key].value
-      } else if (key !== undefined && this.refs[key].value > 0) {
-        fields[key] = this.refs[key].value
+      } else if (key !== undefined && this.refs[key].value > 0 && key !== 'form') {
+        let user = {}
+        user.id = key;
+        user.amount = this.refs[key].value
+        fields.users.push(user)
       }
     }
-    this.props.submitBill(fields)
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    const fields = {}
-    for(let key in this.refs) {
-      if(key === 'billName' || key === 'billTotal' || key === 'billDueDate') {
-        fields[key] = this.refs[key].value
-      } else if (key !== undefined && this.refs[key].value > 0) {
-        fields[key] = this.refs[key].value
-      }
-    }
+    this.refs.form.reset()
     this.props.submitBill(fields)
   }
 
@@ -52,7 +43,7 @@ class ChargeForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit.bind(this)}>
+      <form ref="form" onSubmit={this.onSubmit.bind(this)}>
         <h5 className="text-center">Bill Info</h5>
         <div className="form-group col-sm-6 no-padding-xs no-padding-left">
           <label>Bill Name*</label>
