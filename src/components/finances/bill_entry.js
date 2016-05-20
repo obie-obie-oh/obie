@@ -19,9 +19,9 @@ const BillEntry = ({
             &nbsp; {bill.billName}
           </span>
         </p>
-        <p>
-          by {h.getPaymentDate(bill.due_date)}
-        </p>
+        {!bill.due_date? '' :
+        <p>by {h.getPaymentDate(bill.due_date)}</p>}
+        
       </div>
       <div className="col-xs-4 col-lg-2 flex-end-button">
         <button className="pay-button btn btn-default">Pay</button>

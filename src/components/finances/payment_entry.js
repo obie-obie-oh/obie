@@ -14,9 +14,9 @@ const PaymentEntry = ({
           {payment.billName}
         </span>
       </p>
-      <p>
-        by { h.getPaymentDate(payment.due_date) }
-      </p>
+      {!payment.due_date ? '' : 
+      <p>by { h.getPaymentDate(payment.due_date) }</p>}
+      
     </div>
   </section>
 )
