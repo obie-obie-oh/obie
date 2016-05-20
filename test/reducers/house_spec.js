@@ -27,20 +27,6 @@ describe('house reducer', () => {
     })
   })
 
-  it('handles FETCH_USER_IMAGE', () => {
-    const action = { type: actions.FETCH_USER_IMAGE, payload: { data: [{ user_image_url: "http://i.imgur.com/BnMK0CX.png" }] }}
-    const nextState = reducer(INITIAL_STATE, action)
-
-    expect(nextState).to.deep.equal({
-      users: [],
-      address: '',
-      code: '',
-      name: '',
-      landlordId: 0,
-      userImage: 'http://i.imgur.com/BnMK0CX.png',
-    })
-  })
-
   it('should handle if action.type is unrecognized',() => {
     const action = { type: 'something', payload: {data: []}}
     const nextState = reducer(INITIAL_STATE, action)

@@ -1,11 +1,9 @@
 import axios from 'axios'
 import * as actions from './types'
-
-const ROOT_URL = 'https://obie.herokuapp.com'
-const NEW_API = 'http://localhost:6969'
+const API_ROOT_URL = 'http://localhost:8787'
 
 export function fetchHouseData() {
-  const request = axios.get(`${NEW_API}/api/houses`, {
+  const request = axios.get(`${API_ROOT_URL}/api/houses`, {
     headers: { 
       token: localStorage.getItem('obie') 
     }
@@ -18,8 +16,7 @@ export function fetchHouseData() {
 }
 
 export function fetchUsers() {
-  // const request = axios.get(`${ROOT_URL}/users`, {
-  const request = axios.get(`${NEW_API}/api/users/roommates`, {
+  const request = axios.get(`${API_ROOT_URL}/api/users/roommates`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -32,7 +29,7 @@ export function fetchUsers() {
 }
 
 export function fetchUserData() {
-  const request = axios.get(`${NEW_API}/api/users`, {
+  const request = axios.get(`${API_ROOT_URL}/api/users`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -45,7 +42,7 @@ export function fetchUserData() {
 }
 
 export function fetchMessages() {
-  const request = axios.get(`${NEW_API}/api/messages`, {
+  const request = axios.get(`${API_ROOT_URL}/api/messages`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -58,7 +55,7 @@ export function fetchMessages() {
 }
 
 export function fetchLandlordMessages() {
-  const request = axios.get(`${NEW_API}/api/messages/landlord`, {
+  const request = axios.get(`${API_ROOT_URL}/api/messages/landlord`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -71,7 +68,7 @@ export function fetchLandlordMessages() {
 }
 
 export function fetchChores() {
-  const request = axios.get(`${NEW_API}/api/chores`, {
+  const request = axios.get(`${API_ROOT_URL}/api/chores`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -84,7 +81,7 @@ export function fetchChores() {
 }
 
 export function fetchPayments() {
-  const request = axios.get(`${NEW_API}/api/payments`, {
+  const request = axios.get(`${API_ROOT_URL}/api/payments`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -97,7 +94,7 @@ export function fetchPayments() {
 }
 
 export function fetchBills() {
-  const request = axios.get(`${NEW_API}/api/bills`, {
+  const request = axios.get(`${API_ROOT_URL}/api/bills`, {
     headers: {
       token: localStorage.getItem('obie')
     }
@@ -110,7 +107,7 @@ export function fetchBills() {
 }
 
 export function createChore(props) {
-  const request = axios.post(`${NEW_API}/api/chores`, {
+  const request = axios.post(`${API_ROOT_URL}/api/chores`, {
     headers: {
       token: localStorage.getItem('obie')
     },
@@ -124,7 +121,7 @@ export function createChore(props) {
 }
 
 export function submitRoommateMessage(props) {
-  const request = axios.post(`${NEW_API}/api/messages`, {
+  const request = axios.post(`${API_ROOT_URL}/api/messages`, {
     headers: {
       token: localStorage.getItem('obie')
     },
@@ -140,7 +137,7 @@ export function submitRoommateMessage(props) {
 
 export function submitBill(props) {
   console.log('IN FRONT END', props)
-  const request = axios.post(`${NEW_API}/api/bills`, {
+  const request = axios.post(`${API_ROOT_URL}/api/bills`, {
     headers: {
       token: localStorage.getItem('obie')
     },
@@ -154,7 +151,7 @@ export function submitBill(props) {
 }
 
 export function submitLandlordMessage(props) {
-  const request = axios.post(`${NEW_API}/api/messages/landlord`, {
+  const request = axios.post(`${API_ROOT_URL}/api/messages/landlord`, {
     headers: {
       token: localStorage.getItem('obie')
     },

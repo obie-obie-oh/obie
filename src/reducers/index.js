@@ -3,7 +3,8 @@ import { roommateMessages, landlordMessages } from './messages_reducer'
 import chores from './chores_reducer'
 import finances from './finances_reducer'
 import house from './house_reducer'
-import {reducer as form} from 'redux-form'
+import user from './user_reducer'
+import { reducer as form } from 'redux-form'
 
 const rootReducer = combineReducers({
   messages: roommateMessages,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   chores,
   finances,
   house,
+  user,
   form
 })
 
