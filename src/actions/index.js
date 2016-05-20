@@ -31,15 +31,15 @@ export function fetchUsers() {
   }
 }
 
-export function fetchUserImage() {
-  const request = axios.get(`${NEW_API}/api/users/image`, {
+export function fetchUserData() {
+  const request = axios.get(`${NEW_API}/api/users`, {
     headers: {
       token: localStorage.getItem('obie')
     }
   })
 
   return {
-    type: actions.FETCH_USER_IMAGE,
+    type: actions.FETCH_USER_DATA,
     payload: request
   }
 }
