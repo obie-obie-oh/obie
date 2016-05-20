@@ -11,11 +11,11 @@ class Sidebar extends Component {
     return (
       <aside className="sidebar col-sm-3 in-desktop">
         <figure>
-          <img style={{width: '80%', height: 'auto'}} src={this.props.house.userImage || "http://www.pissedconsumer.com/themes/foundation/images/avatar_placeholder-128x128.png"} />
+          <img style={{width: '80%', height: 'auto'}} src={this.props.user.userImageUrl || "http://www.pissedconsumer.com/themes/foundation/images/avatar_placeholder-128x128.png"} />
         </figure>
         <div className="sidebar-user-container">
           <header className="sidebar-roster-header">
-            <h3>{this.props.house.name}</h3>
+            <h3>{this.props.user.name}</h3>
             <h4>Roommates:</h4>
           </header>
           {this.props.house.users.map((user, i) => 
@@ -29,7 +29,8 @@ class Sidebar extends Component {
 
 function mapStateToProps (state) {
   return {
-    house: state.house
+    house: state.house,
+    user: state.user
   }
 }
 
