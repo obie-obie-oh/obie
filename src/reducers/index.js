@@ -6,6 +6,8 @@ import house from './house_reducer'
 import user from './user_reducer'
 import { reducer as form } from 'redux-form'
 
+import { routerReducer } from 'react-router-redux'
+
 const rootReducer = combineReducers({
   messages: roommateMessages,
   landlordMessages,
@@ -13,6 +15,7 @@ const rootReducer = combineReducers({
   finances,
   house,
   user,
+  routing: routerReducer,
   form
 })
 
