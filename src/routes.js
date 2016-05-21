@@ -13,6 +13,7 @@ import Chores from './components/chores/chores'
 import ChoresList from './components/chores/chore_list'
 import ChoresAssign from './components/chores/chores_assign'
 import Dashboard from './components/dashboard/dashboard'
+import Login from './components/login/login'
 
 export default (
   <Route path='/' component={App}>
@@ -36,6 +37,7 @@ export default (
         <Route path='charge' component={ChargeForm} />
       </Route>
     </Route>
+    <Route path="login" component={Login} />
     <Route path='dashboard' component={Dashboard}>
 
     </Route>

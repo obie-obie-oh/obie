@@ -11,3 +11,18 @@ export function completeTodo(todoId) {
     id: todoId
   })
 }
+
+export function signUp(name, email, password) {
+  return axios.post(`${API_ROOT_URL}/api/users`, {
+    name: name,
+    email: email,
+    password: password
+  })
+}
+
+export function login(email, password) {
+  return axios.post(`${API_ROOT_URL}/api/users/signin`, {
+    email: email,
+    password: password
+  })
+}
