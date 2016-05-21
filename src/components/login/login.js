@@ -45,11 +45,11 @@ class Login extends Component {
           <form onSubmit={this.login.bind(this)}>
             <h4>Log In</h4>
             <div className="form-group">
-              <label className="form-control">Email</label>
+              <label>Email</label>
               <input ref="email" className="form-control" type="email" />
             </div>
             <div className="form-group">
-              <label className="form-control">Password</label>
+              <label>Password</label>
               <input ref="password" className="form-control" type="password" />
             </div>
             <button className="btn btn-primary">Login</button>
@@ -59,19 +59,19 @@ class Login extends Component {
           <form onSubmit={this.signup.bind(this)}>
             <h4>Sign Up</h4>
             <div className="form-group">
-              <label className="form-control">Name</label>
+              <label>Name</label>
               <input ref="name" className="form-control" type="text" />
             </div>
             <div className="form-group">
-              <label className="form-control">Email</label>
+              <label>Email</label>
               <input ref="email" className="form-control" type="email" />
             </div>
             <div className="form-group">
-              <label className="form-control">Password</label>
+              <label>Password</label>
               <input ref="password" className="form-control" type="password" />
             </div>
             <div className="form-group">
-              <label className="form-control">Verify Password</label>
+              <label>Verify Password</label>
               <input className="form-control" type="password" />
             </div>
             <button className="btn btn-primary">Sign Up</button>
